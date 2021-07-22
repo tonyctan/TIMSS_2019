@@ -465,219 +465,206 @@ RENAME VARIABLES (
 ** Compound variables **
 **************************
 
-* Language of teacher questionnaire.
+* Language of student context questionnaire.
 RECODE
-    ITLANG_T
+    ITLANG_SQ
         (99=-99) (SYSMIS=-99) (MISSING=-99).
 MISSING VALUES
-    ITLANG_T
+    ITLANG_SQ
         (-99).
 
-* Locale ID of teacher questionnaire.
+* Locale ID of student context questionnaire.
 RECODE
-    LCID_T
+    LCID_SQ
         (9999999999=-99) (SYSMIS=-99) (MISSING=-99).
 MISSING VALUES
-    LCID_T
+    LCID_SQ
         (-99).
 
-* TIMSS compound variables: SEAS.
+* Language of student achievement test.
 RECODE
-    ATBGEAS
-        (999999=-99) (SYSMIS=-99) (MISSING=-99).
+    ITLANG_SA
+        (99=-99) (SYSMIS=-99) (MISSING=-99).
 MISSING VALUES
-    ATBGEAS
+    ITLANG_SA
+        (-99).
+
+* Locale ID of student achievement test.
+RECODE
+    LCID_SA
+        (9999999999=-99) (SYSMIS=-99) (MISSING=-99).
+MISSING VALUES
+    LCID_SA
+        (-99).
+
+* Student gender.
+RECODE
+    ITSEX
+        (1=0) (2=1)
+        (9=-99) (SYSMIS=-99) (MISSING=-99).
+VALUE LABELS
+    ITSEX
+        0 'Female'
+        1 'Male'.
+MISSING VALUES
+    ITSEX
         (-99).
 RENAME VARIABLES (
-    ATBGEAS = SCLSeas
+    ITSEX = GendBoy
     ).
 
+* Student age.
 RECODE
-    ATDGEAS
+    ASDAGE
+        (99=-99) (SYSMIS=-99) (MISSING=-99).
+MISSING VALUES
+    ASDAGE
+        (-99).
+RENAME VARIABLES (
+    ASDAGE = StdAge
+    ).
+
+* Test administrator postion.
+RECODE
+    ITADMINI
+        (1=0) (2=1) (3=2)
+        (9=-99) (SYSMIS=-99) (MISSING=-99).
+VALUE LABELS
+    ITADMINI
+        0 'National center staff'
+        1 'Teacher from school'
+        2 'Other'.
+MISSING VALUES
+    ITADMINI
+        (-99).
+RENAME VARIABLES (
+    ITADMINI = TestAdm
+    ).
+
+* Check for missing values in weights.
+FREQUENCIES
+    WGTADJ1 WGTADJ2 WGTADJ3 WGTFAC1 WGTFAC2 WGTFAC3
+        /FORMAT = NOTABLE.
+* Good! Nothing is missing. No re-coding needed either. No further action.
+
+
+* TIMSS construct: Disorderly behavior during math lesson.
+RECODE
+    ASBGDML
+        (999999=-99) (SYSMIS=-99) (MISSING=-99).
+MISSING VALUES
+    ASBGDML
+        (-99).
+RENAME VARIABLES (
+    ASBGDML = SCLDisor
+    ).
+
+* TIMSS construct: Disorderly behavior during math lesson.
+RECODE
+    ASDGDML
+        (1=0) (2=1) (3=2)
+        (9=-99) (SYSMIS=-99) (MISSING=-99).
+VALUE LABELS
+    ASDGDML
+        0 'Few or no lessons'
+        1 'Some lessons'
+        2 'Most lessons'.
+MISSING VALUES
+    ASDGDML
+        (-99).
+RENAME VARIABLES (
+    ASDGDML = IDXDisor
+    ).
+
+* TIMSS construct: Instructional clarity in mathematics lessons.
+RECODE
+    ASBGICM
+        (999999=-99) (SYSMIS=-99) (MISSING=-99).
+MISSING VALUES
+    ASBGICM
+        (-99).
+RENAME VARIABLES (
+    ASBGICM = SCLClrtM
+    ).
+
+* TIMSS construct: Instructional clarity in mathematics lessons.
+RECODE
+    ASDGICM
         (1=2) (2=1) (3=0)
         (9=-99) (SYSMIS=-99) (MISSING=-99).
 VALUE LABELS
-    ATDGEAS
-        0 'Medium emphasis'
-        1 'High emphasis'
-        2 'Very high emphasis'.
+    ASDGICM
+        0 'Low clarity of instruction'
+        1 'Moderate clarity of instruction'
+        2 'High clarity of instruction'.
 MISSING VALUES
-    ATDGEAS
+    ASDGICM
         (-99).
 RENAME VARIABLES (
-    ATDGEAS = IDXSeas
+    ASDGICM = IDXClrtM
     ).
 
-* TIMSS compound variables: Safe and orderly school.
+* TIMSS construct: Student sense of school belonging.
 RECODE
-    ATBGSOS
+    ASBGSSB
         (999999=-99) (SYSMIS=-99) (MISSING=-99).
 MISSING VALUES
-    ATBGSOS
+    ASBGSSB
         (-99).
 RENAME VARIABLES (
-    ATBGSOS = SCLSafe
+    ASBGSSB = SCLBlong
     ).
 
+* TIMSS construct: Student sense of school belonging.
 RECODE
-    ATDGSOS
+    ASDGSSB
         (1=2) (2=1) (3=0)
         (9=-99) (SYSMIS=-99) (MISSING=-99).
 VALUE LABELS
-    ATDGSOS
-        0 'Less than safe and orderly'
-        1 'Somewhat safe and orderly'
-        2 'Very safe and orderly'.
+    ASDGSSB
+        0 'Little sense of school belonging'
+        1 'Some sense of school belonging'
+        2 'High sense of school belonging'.
 MISSING VALUES
-    ATDGSOS
+    ASDGSSB
         (-99).
 RENAME VARIABLES (
-    ATDGSOS = IDXSafe
+    ASDGSSB = IDXBlong
     ).
 
-* TIMSS compound variables: Teacher job satisfaction.
+* TIMSS construct: Bullying.
 RECODE
-    ATBGTJS
+    ASBGSB
         (999999=-99) (SYSMIS=-99) (MISSING=-99).
 MISSING VALUES
-    ATBGTJS
+    ASBGSB
         (-99).
 RENAME VARIABLES (
-    ATBGTJS = SCLJob
+    ASBGSB = SCLBully
     ).
 
+* TIMSS construct: Bullying.
 RECODE
-    ATDGTJS
-        (1=2) (2=1) (3=0)
+    ASDGSB
+        (1=0) (2=1) (3=2)
         (9=-99) (SYSMIS=-99) (MISSING=-99).
 VALUE LABELS
-    ATDGTJS
-        0 'Less than satisfied'
-        1 'Somewhat satisfied'
-        2 'Very satisfied'.
+    ASDGSB
+        0 'Never or almost never'
+        1 'About monthly'
+        2 'About weekly'.
 MISSING VALUES
-    ATDGTJS
+    ASDGSB
         (-99).
 RENAME VARIABLES (
-    ATDGTJS = IDXJob
+    ASDGSB = IDXBully
     ).
 
-* TIMSS compound variables: Teaching limited by students not ready.
-RECODE
-    ATBGLSN
-        (999999=-99) (SYSMIS=-99) (MISSING=-99).
-MISSING VALUES
-    ATBGLSN
-        (-99).
-RENAME VARIABLES (
-    ATBGLSN = SCLLimit
-    ).
 
-RECODE
-    ATDGLSN
-        (1=2) (2=1) (3=0)
-        (9=-99) (SYSMIS=-99) (MISSING=-99).
-VALUE LABELS
-    ATDGLSN
-        0 'A lot'
-        1 'Some'
-        2 'Very little'.
-MISSING VALUES
-    ATDGLSN
-        (-99).
-RENAME VARIABLES (
-    ATDGLSN = IDXLimit
-    ).
 
-* TIMSS compound variables: Teacher emphasis on science investigation.
-RECODE
-    ATBSESI
-        (999999=-99) (SYSMIS=-99) (MISSING=-99).
-MISSING VALUES
-    ATBSESI
-        (-99).
-RENAME VARIABLES (
-    ATBSESI = SCLExprm
-    ).
 
-RECODE
-    ATDSESI
-        (1=1) (2=0)
-        (9=-99) (SYSMIS=-99) (MISSING=-99).
-VALUE LABELS
-    ATDSESI
-        0 'Less than half the lessons'
-        1 'About half the lessons or more'.
-MISSING VALUES
-    ATDSESI
-        (-99).
-RENAME VARIABLES (
-    ATDSESI = IDXExprm
-    ).
 
-* Percent of students taught math topics.
-RECODE
-    ATDMNUM ATDMGEO ATDMDAT
-        (999=-99) (SYSMIS=-99) (MISSING=-99).
-MISSING VALUES
-    ATDMNUM ATDMGEO ATDMDAT
-        (-99).
-RENAME VARIABLES (
-    ATDMNUM ATDMGEO ATDMDAT
-    =
-    PTpNumb PTpGeo PTpData
-    ).
 
-* Percent of teachers majored in education and math.
-RECODE
-    ATDMMEM
-        (1=4) (2=3) (3=2) (4=1) (5=0)
-        (9=-99) (SYSMIS=-99) (MISSING=-99).
-VALUE LABELS
-    ATDMMEM
-        0 'No formal education beyond upper secondary'
-        1 'All other majors'
-        2 'Major in mathematics but not education'
-        3 'Major in education but not mathematics'
-        4 'Major in education and mathematics'.
-MISSING VALUES
-    ATDMMEM
-        (-99).
-RENAME VARIABLES (
-    ATDMMEM = MTchMjr
-    ).
-
-* Percent of students taught science topics.
-RECODE
-    ATDSLIF ATDSPHY ATDSEAR
-        (999=-99) (SYSMIS=-99) (MISSING=-99).
-MISSING VALUES
-    ATDSLIF ATDSPHY ATDSEAR
-        (-99).
-RENAME VARIABLES (
-    ATDSLIF ATDSPHY ATDSEAR
-    =
-    PTpLife PTpPhys PTpEarth
-    ).
-
-* Percent of teachers majored in education and science.
-RECODE
-    ATDSMES
-        (1=4) (2=3) (3=2) (4=1) (5=0)
-        (9=-99) (SYSMIS=-99) (MISSING=-99).
-VALUE LABELS
-    ATDSMES
-        0 'No formal education beyond upper secondary'
-        1 'All other majors'
-        2 'Major in science but not education'
-        3 'Major in education but not science'
-        4 'Major in education and science'.
-MISSING VALUES
-    ATDSMES
-        (-99).
-RENAME VARIABLES (
-    ATDSMES = STchMjr
-    ).
 
 
 
