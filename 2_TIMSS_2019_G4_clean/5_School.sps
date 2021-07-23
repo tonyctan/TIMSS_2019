@@ -1,0 +1,372 @@
+﻿* Encoding: UTF-8.
+
+**** ADMIN INFO *****
+* Date: 22 July 2021
+* Author: Tony Tan
+* Email: tctan@uio.no
+* Position: Research Assistant
+* Organisation: CEMO, UV, UiO
+* Script purpose: Data cleaning--School
+
+***** DATA ATTRIBUTES *****
+* ILSA: TIMSS
+* Cycle: 2019
+* Questionnaire: School
+* Grade: Grade 4
+* Subject: Math and Science
+
+***** Begin script *****
+
+* Import data.
+GET FILE =
+    "D:\TIMSS_2019\2_TIMSS_2019_G4_clean\TIMSS_2019_G4_clean.sav".
+
+**************************
+** School variables **
+**************************
+
+* 03: Percentage of disadvantaged students attending the school.
+RECODE
+    ACBG03A ACBG03B
+        (1=0) (2=1) (3=2) (4=3)
+        (9=-99) (SYSMIS=-99) (MISSING=-99).
+VALUE LABELS
+    ACBG03A ACBG03B
+        0 '0 to 10%'
+        1 '11 to 25%'
+        2 '26 to 50%'
+        3 'More than 50%'.
+MISSING VALUES
+    ACBG03A ACBG03B
+        (-99).
+RENAME VARIABLES (
+    ACBG03A ACBG03B
+    =
+    SchDisad SchEco
+    ).
+
+* 04: Percentage of students having the language of test as their native language.
+RECODE
+    ACBG04
+        (1=4) (2=3) (3=2) (4=1) (5=0)
+        (9=-99) (SYSMIS=-99) (MISSING=-99).
+VALUE LABELS
+    ACBG04
+        0 '25% or less'
+        1 '26 to 50%'
+        2 '51 to 75%'
+        3 '76 to 90%'
+        4 'More than 90%'.
+MISSING VALUES
+    ACBG04
+        (-99).
+RENAME VARIABLES (
+    ACBG04 = SchLang
+    ).
+
+* 05A: Number of people live in the school area.
+RECODE
+    ACBG05A
+        (1=6) (2=5) (3=4) (4=3) (5=2) (6=1) (7=0)
+        (99=-99) (SYSMIS=-99) (MISSING=-99).
+VALUE LABELS
+    ACBG05A
+        0 '3,000 people or fewer'
+        1 '3,001 to 15,000 people'
+        2 '15,001 to 30,000 people'
+        3 '30,001 to 50,000 people'
+        4 '50,001 to 100,000 people'
+        5 '100,001 to 500,000 people'
+        6 'More than 500,000 people'.
+MISSING VALUES
+    ACBG05A
+        (-99).
+RENAME VARIABLES (
+    ACBG05A = SchPop
+    ).
+
+* 05B: School location.
+RECODE
+    ACBG05B
+        (9=-99) (SYSMIS=-99) (MISSING=-99).
+MISSING VALUES
+    ACBG05B
+        (-99).
+RENAME VARIABLES (
+    ACBG05B = SchArea
+    ).
+
+* 06AB: Instructional time.
+RECODE
+    ACBG06A ACBG06B
+        (999=-99) (SYSMIS=-99) (MISSING=-99).
+MISSING VALUES
+    ACBG06A ACBG06B
+        (-99).
+RENAME VARIABLES (
+    ACBG06A ACBG06B
+    =
+    SchDays SchTime
+    ).
+
+* 06C: Instructional time.
+RECODE
+    ACBG06C
+        (1=4) (2=3) (3=2) (4=1) (5=0) (6=5)
+        (9=-99) (SYSMIS=-99) (MISSING=-99).
+VALUE LABELS
+    ACBG06C
+        0 '4 days'
+        1 '4 1/2 days'
+        2 '5 days'
+        3 '5 1/2 days'
+        4 '6 days'
+        5 'Other'.
+MISSING VALUES
+    ACBG06C
+        (-99).
+RENAME VARIABLES (
+    ACBG06C = InstDay
+    ).
+
+* 07: Number of computers at school.
+RECODE
+    ACBG07
+        (9999=-99) (SYSMIS=-99) (MISSING=-99).
+MISSING VALUES
+    ACBG07
+        (-99).
+RENAME VARIABLES (
+    ACBG07 = NumComp
+    ).
+
+* 08AB,9,10A: Science laborat, Available assisstant for experiment,Access to learning management system,School library.
+RECODE
+    ACBG08A ACBG08B ACBG09 ACBG10A
+        (1=1) (2=0)
+        (9=-99) (SYSMIS=-99) (MISSING=-99).
+VALUE LABELS
+    ACBG08A ACBG08B ACBG09 ACBG10A
+        0 'No'
+        1 'Yes'.
+MISSING VALUES
+    ACBG08A ACBG08B ACBG09 ACBG10A
+        (-99).
+RENAME VARIABLES (
+    ACBG08A ACBG08B ACBG09 ACBG10A
+    = 
+    SciLab AssLab NettLMS Library
+    ).
+
+* 10B: The number of books in the library.
+RECODE
+    ACBG10B
+        (6=-99) (9=-99) (SYSMIS=-99) (MISSING=-99).
+MISSING VALUES
+    ACBG10B
+        (-99).
+RENAME VARIABLES (
+    ACBG10B = ManyBook
+    ).
+
+* 11,12: Classroom library, Access to digital learning resources.
+RECODE
+    ACBG11 ACBG12
+        (1=1) (2=0)
+        (9=-99) (SYSMIS=-99) (MISSING=-99).
+VALUE LABELS
+    ACBG11 ACBG12
+        0 'No'
+        1 'Yes'.
+MISSING VALUES
+    ACBG11 ACBG12
+        (-99).
+RENAME VARIABLES (
+    ACBG11 ACBG12
+    = 
+    LibClass DgtlLearn
+    ).
+
+* 13: Shortage affecting school’s capacity to provide general instruction.
+RECODE
+    ACBG13AA ACBG13AB ACBG13AC ACBG13AD ACBG13AE ACBG13AF
+    ACBG13AG ACBG13AH ACBG13AI ACBG13BA ACBG13BB ACBG13BC
+    ACBG13BD ACBG13BE ACBG13CA ACBG13CB ACBG13CC ACBG13CD 
+        (1=0) (2=1) (3=2) (4=3)
+        (9=-99) (SYSMIS=-99) (MISSING=-99).
+VALUE LABELS
+    ACBG13AA ACBG13AB ACBG13AC ACBG13AD ACBG13AE ACBG13AF
+    ACBG13AG ACBG13AH ACBG13AI ACBG13BA ACBG13BB ACBG13BC
+    ACBG13BD ACBG13BE ACBG13CA ACBG13CB ACBG13CC ACBG13CD
+        0 'Not at all'
+        1 'A little'
+        2 'Some'
+        3 'A lot'.
+MISSING VALUES
+    ACBG13AA ACBG13AB ACBG13AC ACBG13AD ACBG13AE ACBG13AF
+    ACBG13AG ACBG13AH ACBG13AI ACBG13BA ACBG13BB ACBG13BC
+    ACBG13BD ACBG13BE ACBG13CA ACBG13CB ACBG13CC ACBG13CD
+        (-99).
+RENAME VARIABLES (
+    ACBG13AA ACBG13AB ACBG13AC ACBG13AD ACBG13AE ACBG13AF
+    ACBG13AG ACBG13AH ACBG13AI ACBG13BA ACBG13BB ACBG13BC
+    ACBG13BD ACBG13BE ACBG13CA ACBG13CB ACBG13CC ACBG13CD
+    =
+    SrtMatrl SrtSuply SrtBuild SrtHeat SrtSpace SrtTech
+    SrtAudio SrtComp SrtDisab SrtMTch SrtMComp SrtMLib
+    SrtMCal SrtMEqu SrtSTch SrtSComp SrtSLib SrtSEqu 
+    ).
+
+* 14: School emphasis on academic success.
+RECODE
+    ACBG14A ACBG14B ACBG14C ACBG14D ACBG14E ACBG14F
+    ACBG14G ACBG14H ACBG14I ACBG14J ACBG14K 
+        (1=4) (2=3) (3=2) (4=1) (5=0)
+        (9=-99) (SYSMIS=-99) (MISSING=-99).
+VALUE LABELS
+    ACBG14A ACBG14B ACBG14C ACBG14D ACBG14E ACBG14F
+    ACBG14G ACBG14H ACBG14I ACBG14J ACBG14K 
+        0 'Very low'
+        1 'Low'
+        2 'Medium'
+        3 'High'
+        4 'Very high'.
+MISSING VALUES
+    ACBG14A ACBG14B ACBG14C ACBG14D ACBG14E ACBG14F
+    ACBG14G ACBG14H ACBG14I ACBG14J ACBG14K 
+        (-99).
+RENAME VARIABLES (
+    ACBG14A ACBG14B ACBG14C ACBG14D ACBG14E ACBG14F
+    ACBG14G ACBG14H ACBG14I ACBG14J ACBG14K
+    =
+    STchUnd STchSuc STchExp STchIns SParInv SParCom
+    SPaeExp SParSupp SStdWell SStdGoal SStdResp 
+    ).
+
+* 15: School discipline and safety.
+RECODE
+    ACBG15A ACBG15B ACBG15C ACBG15D ACBG15E
+    ACBG15F ACBG15G ACBG15H ACBG15I ACBG15J 
+        (1=0) (2=1) (3=2) (4=3)
+        (9=-99) (SYSMIS=-99) (MISSING=-99).
+VALUE LABELS
+    ACBG15A ACBG15B ACBG15C ACBG15D ACBG15E
+    ACBG15F ACBG15G ACBG15H ACBG15I ACBG15J 
+        0 'Not a problem'
+        1 'Minor problem'
+        2 'Moderate problem'
+        3 'Serious problem'.
+MISSING VALUES
+    ACBG15A ACBG15B ACBG15C ACBG15D ACBG15E
+    ACBG15F ACBG15G ACBG15H ACBG15I ACBG15J 
+        (-99).
+RENAME VARIABLES (
+    ACBG15A ACBG15B ACBG15C ACBG15D ACBG15E
+    ACBG15F ACBG15G ACBG15H ACBG15I ACBG15J
+    =
+    SDLate SDAbsnt SDDistrb SDCheat SDProfnt
+    SDVandl SDTheft SDIntim SDFight SDAbuse 
+    ).
+
+* 16: Teacher problem.
+RECODE
+    ACBG16A ACBG16B
+        (1=0) (2=1) (3=2) (4=3)
+        (9=-99) (SYSMIS=-99) (MISSING=-99).
+VALUE LABELS
+    ACBG16A ACBG16B
+        0 'Not a problem'
+        1 'Minor problem'
+        2 'Moderate problem'
+        3 'Serious problem'.
+MISSING VALUES
+    ACBG16A ACBG16B
+        (-99).
+RENAME VARIABLES (
+    ACBG16A ACBG16B
+    =
+    TchLate TchAbsent 
+    ).
+
+* 17: School readiness.
+RECODE
+    ACBG17A ACBG17B ACBG17C ACBG17D ACBG17E ACBG17F
+    ACBG17G ACBG17H ACBG17I ACBG17J ACBG17K ACBG17L 
+        (1=0) (2=1) (3=2) (4=3)
+        (9=-99) (SYSMIS=-99) (MISSING=-99).
+VALUE LABELS
+    ACBG17A ACBG17B ACBG17C ACBG17D ACBG17E ACBG17F
+    ACBG17G ACBG17H ACBG17I ACBG17J ACBG17K ACBG17L
+        0 'less than 25%'
+        1 '25 - 50%'
+        2 '51 - 75%'
+        3 'More than 75%'.
+MISSING VALUES
+    ACBG17A ACBG17B ACBG17C ACBG17D ACBG17E ACBG17F
+    ACBG17G ACBG17H ACBG17I ACBG17J ACBG17K ACBG17L
+        (-99).
+RENAME VARIABLES (
+    ACBG17A ACBG17B ACBG17C ACBG17D ACBG17E ACBG17F
+    ACBG17G ACBG17H ACBG17I ACBG17J ACBG17K ACBG17L
+    =
+    SRLetter SRWord SRSenten SRWrite SRName SRWrtWo
+    SRCount SRNumber SRNumHIg SRWrtNum SRAdditn SRSubtr 
+    ).
+
+* 18,19: Principal years of experience.
+RECODE
+    ACBG18 ACBG19
+        (99=-99) (SYSMIS=-99) (MISSING=-99).
+MISSING VALUES
+    ACBG18 ACBG19
+        (-99).
+RENAME VARIABLES (
+    ACBG18 ACBG19 
+    =
+    PrcplYear PrYearSc
+    ).
+
+* 20: Principal highest level of education.
+RECODE
+    ACBG20
+        (1=0) (2=1) (3=2) (4=3)
+        (9=-99) (SYSMIS=-99) (MISSING=-99).
+VALUE LABELS
+    ACBG20
+        0 'Did not complete <Bachelor’s or equivalent level—ISCED Level 6>'
+        1 '<Bachelor’s or equivalent level—ISCED Level 6>'
+        2 '<Master’s or equivalent level—ISCED Level 7>'
+        3 '<Doctor or equivalent level—ISCED Level 8>'.
+MISSING VALUES
+    ACBG20
+        (-99).
+RENAME VARIABLES (
+    ACBG20D = PrEdu
+    ).
+
+* 21: Principal qualification in educational leadership.
+RECODE
+    ACBG21A ACBG21B ACBG21C
+        (1=1) (2=0)
+        (9=-99) (SYSMIS=-99) (MISSING=-99).
+VALUE LABELS
+    ACBG21A ACBG21B ACBG21C
+        0 'No'
+        1 'Yes'.
+MISSING VALUES
+    ACBG21A ACBG21B ACBG21
+        (-99).
+RENAME VARIABLES (
+    ACBG21A ACBG21B ACBG21
+    = 
+    PrLdrCer PrLdrMas PrLdrDoc
+    ).
+
+* Run script.
+EXECUTE.
+
+* Update data set.
+SAVE OUTFILE =
+    "D:\TIMSS_2019\2_TIMSS_2019_G4_clean\TIMSS_2019_G4_clean.sav".
+
+***** End script *****
