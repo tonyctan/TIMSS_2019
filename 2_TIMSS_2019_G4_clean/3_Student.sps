@@ -302,7 +302,7 @@ MISSING VALUES
 RENAME VARIABLES (
     ASBM05A ASBM05B ASBM05C ASBM05D ASBM05E ASBM05F ASBM05G ASBM05H ASBM05I
     =
-    MSCWell MSCHard MSCNoGod MSCLearn MSCNervs MSCWork MSCGood MSCHard MSCConfs
+    MSCWell MSCHdMate MSCNoGod MSCLearn MSCNervs MSCWork MSCGood MSCHdSubj MSCConfs
     ).
 
 * MS6: Science experiment.
@@ -311,18 +311,16 @@ RECODE
         (1=3) (2=2) (3=1) (4=0)
         (6=-99) (9=-99) (SYSMIS=-99) (MISSING=-99).
 VALUE LABELS
-    ATBM04BA ATBM04BB ATBM04BC
+    ASBS06
         0 'Never'
         1 'A few times a year'
         2 'Once or twice a month'
         3 'At least once a week'.
 MISSING VALUES
-    ATBM04BA ATBM04BB ATBM04BC
+    ASBS06
         (-99).
 RENAME VARIABLES (
-    ATBM04BA ATBM04BB ATBM04BC
-    =
-    MPCStd MPCClas MPCSch
+    ASBS06 = SconExpr
     ).
 
 * MS7: Intrinsic motivation for learning science.
@@ -498,20 +496,20 @@ MISSING VALUES
         (-99).
 
 * Student gender.
-RECODE
-    ITSEX
-        (1=0) (2=1)
-        (9=-99) (SYSMIS=-99) (MISSING=-99).
-VALUE LABELS
-    ITSEX
-        0 'Female'
-        1 'Male'.
-MISSING VALUES
-    ITSEX
-        (-99).
-RENAME VARIABLES (
-    ITSEX = GendBoy
-    ).
+*RECODE
+*    ITSEX
+*        (1=0) (2=1)
+*        (9=-99) (SYSMIS=-99) (MISSING=-99).
+*VALUE LABELS
+*    ITSEX
+*        0 'Female'
+*        1 'Male'.
+*MISSING VALUES
+*    ITSEX
+*        (-99).
+*RENAME VARIABLES (
+*    ITSEX = GendBoy
+*    ).
 
 * Student age.
 RECODE
@@ -660,13 +658,244 @@ RENAME VARIABLES (
     ASDGSB = IDXBully
     ).
 
+* TIMSS construct: Students like learning mathematics.
+RECODE
+    ASBGSLM
+        (999999=-99) (SYSMIS=-99) (MISSING=-99).
+MISSING VALUES
+    ASBGSLM
+        (-99).
+RENAME VARIABLES (
+    ASBGSLM = SCLLikeM
+    ).
 
+* TIMSS construct: Students like learning mathematics.
+RECODE
+    ASDGSLM
+        (1=2) (2=1) (3=0)
+        (9=-99) (SYSMIS=-99) (MISSING=-99).
+VALUE LABELS
+    ASDGSLM
+        0 'Do not learning mathematics'
+        1 'Somewhat like learning mathematics'
+        2 'Very much like learning mathematics'.
+MISSING VALUES
+    ASDGSLM
+        (-99).
+RENAME VARIABLES (
+    ASDGSLM = IDXLikeM
+    ).
 
+* TIMSS construct: Instructional clarity in science lessons.
+RECODE
+    ASBGICS
+        (999999=-99) (SYSMIS=-99) (MISSING=-99).
+MISSING VALUES
+    ASBGICS
+        (-99).
+RENAME VARIABLES (
+    ASBGICS = SCLClrtS
+    ).
 
+* TIMSS construct: Instructional clarity in science lessons.
+RECODE
+    ASDGICS
+        (1=2) (2=1) (3=0)
+        (9=-99) (SYSMIS=-99) (MISSING=-99).
+VALUE LABELS
+    ASDGICS
+        0 'Low clarity of instruction'
+        1 'Moderate clarity of instruction'
+        2 'High clarity of instruction'.
+MISSING VALUES
+    ASDGICS
+        (-99).
+RENAME VARIABLES (
+    ASDGICS = IDXClrtS
+    ).
 
+* TIMSS construct: Students confident in mathematics.
+RECODE
+    ASBGSCM
+        (999999=-99) (SYSMIS=-99) (MISSING=-99).
+MISSING VALUES
+    ASBGSCM
+        (-99).
+RENAME VARIABLES (
+    ASBGSCM = SCLConfM
+    ).
 
+* TIMSS construct: Students confident in mathematics.
+RECODE
+    ASDGSCM
+        (1=2) (2=1) (3=0)
+        (9=-99) (SYSMIS=-99) (MISSING=-99).
+VALUE LABELS
+    ASDGSCM
+        0 'Not confident in mathematics'
+        1 'Somewhat confident in mathematics'
+        2 'Very confident in mathematics'.
+MISSING VALUES
+    ASDGSCM
+        (-99).
+RENAME VARIABLES (
+    ASDGSCM = IDXConfM
+    ).
 
+* TIMSS construct: Students like learning science.
+RECODE
+    ASBGSLS
+        (999999=-99) (SYSMIS=-99) (MISSING=-99).
+MISSING VALUES
+    ASBGSLS
+        (-99).
+RENAME VARIABLES (
+    ASBGSLS = SCLLikeS
+    ).
 
+* TIMSS construct: Students like learning science.
+RECODE
+    ASDGSLS
+        (1=2) (2=1) (3=0)
+        (9=-99) (SYSMIS=-99) (MISSING=-99).
+VALUE LABELS
+    ASDGSLS
+        0 'Do not learning science'
+        1 'Somewhat like learning science'
+        2 'Very much like learning science'.
+MISSING VALUES
+    ASDGSLS
+        (-99).
+RENAME VARIABLES (
+    ASDGSLS = IDXLikeS
+    ).
+
+* TIMSS construct: Students confident in science.
+RECODE
+    ASBGSCS
+        (999999=-99) (SYSMIS=-99) (MISSING=-99).
+MISSING VALUES
+    ASBGSCS
+        (-99).
+RENAME VARIABLES (
+    ASBGSCS = SCLConfS
+    ).
+
+* TIMSS construct: Students confident in science.
+RECODE
+    ASDGSCS
+        (1=2) (2=1) (3=0)
+        (9=-99) (SYSMIS=-99) (MISSING=-99).
+VALUE LABELS
+    ASDGSCS
+        0 'Not confident in science'
+        1 'Somewhat confident in science'
+        2 'Very confident in science'.
+MISSING VALUES
+    ASDGSCS
+        (-99).
+RENAME VARIABLES (
+    ASDGSCS = IDXConfS
+    ).
+
+* TIMSS construct: Home resources for learning.
+RECODE
+    ASBGHRL
+        (999999=-99) (SYSMIS=-99) (MISSING=-99).
+MISSING VALUES
+    ASBGHRL
+        (-99).
+RENAME VARIABLES (
+    ASBGHRL = SCLHmSES
+    ).
+
+* TIMSS construct: Home resources for learning.
+RECODE
+    ASDGHRL
+        (1=2) (2=1) (3=0)
+        (9=-99) (SYSMIS=-99) (MISSING=-99).
+VALUE LABELS
+    ASDGHRL
+        0 'Few resources'
+        1 'Some resources'
+        2 'Many resources'.
+MISSING VALUES
+    ASDGHRL
+        (-99).
+RENAME VARIABLES (
+    ASDGHRL = IDXHmSES
+    ).
+
+* TIMSS construct: Self-efficacy for computer use.
+RECODE
+    ASBGSEC
+        (999999=-99) (SYSMIS=-99) (MISSING=-99).
+MISSING VALUES
+    ASBGSEC
+        (-99).
+RENAME VARIABLES (
+    ASBGSEC = SCLComSE
+    ).
+
+* TIMSS construct: Self-efficacy for computer use.
+RECODE
+    ASDGSEC
+        (1=2) (2=1) (3=0)
+        (9=-99) (SYSMIS=-99) (MISSING=-99).
+VALUE LABELS
+    ASDGSEC
+        0 'Low self-efficacy'
+        1 'Medium self-efficacy'
+        2 'High self-efficacy'.
+MISSING VALUES
+    ASDGSEC
+        (-99).
+RENAME VARIABLES (
+    ASDGSEC = IDXComSE
+    ).
+
+* Number of home study supports.
+RECODE
+    ASDG05S
+        (9=-99) (SYSMIS=-99) (MISSING=-99).
+MISSING VALUES
+    ASDG05S
+        (-99).
+RENAME VARIABLES (
+    ASDG05S = NStudSup
+    ).
+
+* Mathematics achievement too low for estimation.
+RECODE
+    ASDMLOWP
+        (1=1) (2=0)
+        (9=-99) (SYSMIS=-99) (MISSING=-99).
+VALUE LABELS
+    ASDMLOWP
+        0 'No'
+        1 'Yes'.
+MISSING VALUES
+    ASDMLOWP
+        (-99).
+RENAME VARIABLES (
+    ASDMLOWP = MAchLow
+    ).
+
+* Science achievement too low for estimation.
+RECODE
+    ASDSLOWP
+        (1=1) (2=0)
+        (9=-99) (SYSMIS=-99) (MISSING=-99).
+VALUE LABELS
+    ASDSLOWP
+        0 'No'
+        1 'Yes'.
+MISSING VALUES
+    ASDSLOWP
+        (-99).
+RENAME VARIABLES (
+    ASDSLOWP = SAchLow
+    ).
 
 * Run script.
 EXECUTE.
