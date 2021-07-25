@@ -497,19 +497,19 @@ MISSING VALUES
 
 * Student gender.
 *RECODE
-*    ITSEX
-*        (1=0) (2=1)
-*        (9=-99) (SYSMIS=-99) (MISSING=-99).
+    ITSEX
+        (1=0) (2=1)
+        (9=-99) (SYSMIS=-99) (MISSING=-99).
 *VALUE LABELS
 *    ITSEX
-*        0 'Female'
-*        1 'Male'.
+        0 'Female'
+        1 'Male'.
 *MISSING VALUES
 *    ITSEX
-*        (-99).
+        (-99).
 *RENAME VARIABLES (
-*    ITSEX = GendBoy
-*    ).
+    ITSEX = GendBoy
+    ).
 
 * Student age.
 RECODE

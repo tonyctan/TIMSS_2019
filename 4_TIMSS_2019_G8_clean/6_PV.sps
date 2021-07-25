@@ -146,7 +146,7 @@ DELETE VARIABLES
 EXECUTE.
 
 * Update data set.
-*SAVE OUTFILE =
-*    "D:\TIMSS_2019\4_TIMSS_2019_G8_clean\TIMSS_2019_G8_clean.sav".
+SAVE OUTFILE =
+    "D:\TIMSS_2019\4_TIMSS_2019_G8_clean\TIMSS_2019_G8_clean.sav".
 
 ***** End script *****
