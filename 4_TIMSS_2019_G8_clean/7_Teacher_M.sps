@@ -434,7 +434,7 @@ RECODE
         (1=2) (2=1) (3=0)
         (6=-99) (9=-99) (SYSMIS=-99) (MISSING=-99).
 VALUE LABELS
-    ABTBM19CA BTBM19CB BTBM19CC BTBM19CD BTBM19CE
+    BTBM19CA BTBM19CB BTBM19CC BTBM19CD BTBM19CE
         0 'Never or almost never'
         1 'Sometimes'
         2 'Always or almost always'.
