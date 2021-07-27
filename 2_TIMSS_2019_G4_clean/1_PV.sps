@@ -277,18 +277,13 @@ RENAME VARIABLES (
     SBENCH1 SBENCH2 SBENCH3 SBENCH4 SBENCH5
     ).
 
-**************************
-** Version control **
-**************************
-
+* Run script.
+EXECUTE.
 
 * Remove phamton variable(s).
 DELETE VARIABLES
-    idbid VERSION SCOPE
+    VERSION SCOPE idbid
     .
-
-* Run script.
-EXECUTE.
 
 * Update data set.
 SAVE OUTFILE =

@@ -33,7 +33,7 @@ MISSING VALUES
     BTBG01
         (-99).
 RENAME VARIABLES (
-    BTBG01 = YearTeach
+    BTBG01 = SYearTeach
     ).
 
 * G2: Teacher gender.
@@ -49,7 +49,7 @@ MISSING VALUES
     BTBG02
         (-99).
 RENAME VARIABLES (
-    BTBG02 = TchMale
+    BTBG02 = STchMale
     ).
 
 * G3: Teacher age.
@@ -69,7 +69,7 @@ MISSING VALUES
     BTBG03
         (-99).
 RENAME VARIABLES (
-    BTBG03 = AgeTeach
+    BTBG03 = SAgeTeach
     ).
 
 * G4: Teacher level of education.
@@ -90,7 +90,7 @@ MISSING VALUES
     BTBG04
         (-99).
 RENAME VARIABLES (
-    BTBG04 = EduLevel
+    BTBG04 = SEduLevel
     ).
 
 * G5: Teacher major area of study.
@@ -112,8 +112,8 @@ RENAME VARIABLES (
     BTBG05A BTBG05B BTBG05C BTBG05D BTBG05E
     BTBG05F BTBG05G BTBG05H BTBG05I
     =       
-    MajMath MajBio MajPhy MajChe MajEarth
-    MajEduM MajEduS MajEduG MajOther
+    SMajMath SMajBio SMajPhy SMajChe SMajEarth
+    SMajEduM SMajEduS SMajEduG SMajOther
     ).
 
 * G6: School emphasis on academic success (SEAS).
@@ -135,28 +135,33 @@ RENAME VARIABLES (
     BTBG06A BTBG06B BTBG06C BTBG06D BTBG06E BTBG06F
     BTBG06G BTBG06H BTBG06I BTBG06J BTBG06K BTBG06L
     =
-    STchUnd STchSuc STchExp STchAbi SParInv SParCom
-    SparExp SParSup SStudDes SRchGoal SResPeer Scollab
+    SSTchUnd SSTchSuc SSSTchExp SSTchAbi SSParInv SSParCom
+    SSparExp SSParSup SSStudDes SSRchGoal SSResPeer SScollab
     ).
     
 * G7: Safety and orderly school.
 RECODE
-    BTBG07A BTBG07B BTBG07C BTBG07D BTBG07E BTBG07F BTBG07G BTBG07H
+    BTBG07A BTBG07B BTBG07C BTBG07D
+    BTBG07E BTBG07F BTBG07G BTBG07H
     (1=3) (2=2) (3=1) (4=0)
     (9=-99) (SYSMIS=-99) (MISSING=-99).
 VALUE LABELS
-    BTBG07A BTBG07B BTBG07C BTBG07D BTBG07E BTBG07F BTBG07G BTBG07H
+    BTBG07A BTBG07B BTBG07C BTBG07D
+    BTBG07E BTBG07F BTBG07G BTBG07H
         0 'Disagree a lot'
         1 'Disagree a little'
         2 'Agree a little'
         3 'Agree a lot'.
 MISSING VALUES
-    BTBG07A BTBG07B BTBG07C BTBG07D BTBG07E BTBG07F BTBG07G BTBG07H
+    BTBG07A BTBG07B BTBG07C BTBG07D
+    BTBG07E BTBG07F BTBG07G BTBG07H
         (-99).
 RENAME VARIABLES (
-    BTBG07A BTBG07B BTBG07C BTBG07D BTBG07E BTBG07F BTBG07G BTBG07H
+    BTBG07A BTBG07B BTBG07C BTBG07D
+    BTBG07E BTBG07F BTBG07G BTBG07H
     =
-    OSafeNgh OFeelSaf OSecPol OStdBhv OStdRes OResPro OClrRul ORulEnf
+    SOSafeNgh SOFeelSaf SOSecPol SOStdBhv
+    SOStdRes SOResPro SOClrRul SORulEnf
     ).
 
 * G8: Teacher job satisfaction.
@@ -176,7 +181,7 @@ MISSING VALUES
 RENAME VARIABLES (
     BTBG08A BTBG08B BTBG08C BTBG08D BTBG08E
     =
-    JContent JPurpose JEnthus JInspire JProud
+    SJContent SJPurpose SJEnthus SJInspire SJProud
     ).
 
 * G9: Teaching limitation.
@@ -200,7 +205,8 @@ RENAME VARIABLES (
     BTBG09A BTBG09B BTBG09C BTBG09D
     BTBG09E BTBG09F BTBG09G BTBG09H
     =
-    LManyStd LManyMat LManyHr LTimePrep LTimeAss LMchPres LChgCur LManyAdm
+    SLManyStd SLManyMat SLManyHr SLTimePrep
+    SLTimeAss SLMchPres SLChgCur SLManyAdm
     ).
 
 * G10A: Number of student in the class.
@@ -211,7 +217,7 @@ MISSING VALUES
     BTBG10
         (-99).
 RENAME VARIABLES (
-    BTBG10 = NStdCl
+    BTBG10 = SNStdCl
     ).
 
 * G11: Number of students with language difficulties.
@@ -222,7 +228,7 @@ MISSING VALUES
     BTBG11
         (-99).
 RENAME VARIABLES (
-    BTBG11 = NStdLang
+    BTBG11 = SNStdLang
     ).
 
 * G12: Teaching practices.
@@ -242,26 +248,32 @@ MISSING VALUES
 RENAME VARIABLES (
     BTBG12A BTBG12B BTBG12C BTBG12D BTBG12E BTBG12F BTBG12G
     =
-    PDalyLiv PExpAns PChlgEx PClasDis PLnkKnow PPrbSolv PExpsIde
+    SPDalyLiv SPExpAns SPChlgEx SPClasDis
+    SPLnkKnow SPPrbSolv SPExpsIde
     ).
 
 * G13: Students limitation.
 RECODE
-    BTBG13A BTBG13B BTBG13C BTBG13D BTBG13E BTBG13F BTBG13G BTBG13H
+    BTBG13A BTBG13B BTBG13C BTBG13D
+    BTBG13E BTBG13F BTBG13G BTBG13H
         (1=2) (2=1) (3=0)
         (9=-99) (SYSMIS=-99) (MISSING=-99).
 VALUE LABELS
-    BTBG13A BTBG13B BTBG13C BTBG13D BTBG13E BTBG13F BTBG13G BTBG13H
+    BTBG13A BTBG13B BTBG13C BTBG13D
+    BTBG13E BTBG13F BTBG13G BTBG13H
         0 'A lot'
         1 'Some'
         2 'Not at all'.
 MISSING VALUES
-    BTBG13A BTBG13B BTBG13C BTBG13D BTBG13E BTBG13F BTBG13G BTBG13H
+    BTBG13A BTBG13B BTBG13C BTBG13D
+    BTBG13E BTBG13F BTBG13G BTBG13H
         (-99).
 RENAME VARIABLES (
-    BTBG13A BTBG13B BTBG13C BTBG13D BTBG13E BTBG13F BTBG13G BTBG13H
+    BTBG13A BTBG13B BTBG13C BTBG13D
+    BTBG13E BTBG13F BTBG13G BTBG13H
     =
-    LLckKng LLckNut LLckSlep Labsent LDistStd LUninStd LMentImp LDifUnLg
+    SLLckKng SLLckNut SLLckSlep SLabsent
+    SLDistStd SLUninStd SLMentImp SLDifUnLg
     ).
 
 * S14: Time spent on science instruction.
@@ -272,7 +284,7 @@ MISSING VALUES
     BTBS14
         (-99).
 RENAME VARIABLES (
-    BTBS14 = SciTime
+    BTBS14 = SSciTime
     ).
 
 * S15: science teaching practices.
@@ -296,8 +308,8 @@ RENAME VARIABLES (
     BTBS15A BTBS15B BTBS15C BTBS15D BTBS15E BTBS15F BTBS15G
     BTBS15H BTBS15I BTBS15J BTBS15K BTBS15L BTBS15M BTBS15N
     =
-    STExpln STObsrv STDemo STPlnEx STConEx STPreDat STIntDat STUseEvi
-    STReadBk STMrzFc STUseFor STFieldW STMixAb STSameAb 
+    SSTExpln SSTObsrv SSTDemo SSTPlnEx SSTConEx SSTPreDat SSTIntDat SSTUseEvi
+    SSTReadBk SSTMrzFc SSTUseFor SSTFieldW SSTMixAb SSTSameAb 
     ).
     
 * S16A: Science teaching and access to computer.
@@ -315,7 +327,7 @@ MISSING VALUES
 RENAME VARIABLES (
     BTBS16A BTBS16BA BTBS16BB BTBS16BC
     =
-    SPCAva SPCStd SPCClas SPCSch
+    SSPCAva SSPCStd SSPCClas SSPCSch
     ).
 
 * S16B: Science teaching using computer.
@@ -335,7 +347,7 @@ MISSING VALUES
 RENAME VARIABLES (
     BTBS16CA BTBS16CB BTBS16CC BTBS16CD
     =
-    SLpcClas SLpcLow SLpcHigh SLpcNeed
+    SSLpcClas SSLpcLow SSLpcHigh SSLpcNeed
     ).
 
 * S17: Science Topics Taught to the TIMSS Class.
@@ -366,10 +378,10 @@ RENAME VARIABLES (
     BTBS17BH BTBS17CA BTBS17CB BTBS17CC BTBS17CD BTBS17CE BTBS17CF
     BTBS17CG BTBS17DA BTBS17DB BTBS17DC BTBS17DD
     =
-    TBTaxon TBOrgan TBCell TBRepro TBVary TBPopul TBHealth TCStrct
-    TCTable TCMater TCMixtr TCAcid TCReactn TCEnrgy TCElctrn TPState
-    TPTransf TPLight TPSound TPCirct TPMgnt TPForce TEStrctr TEProcs
-    TERescr TESolar 
+    STBTaxon STBOrgan STBCell STBRepro STBVary STBPopul STBHealth STCStrct
+    STCTable STCMater STCMixtr STCAcid STCReactn STCEnrgy STCElctrn STPState
+    STPTransf STPLight STPSound STPCirct STPMgnt STPForce STEStrctr STEProcs
+    STERescr STESolar 
     ).
 
 * S18A: Time for math homework.
@@ -388,9 +400,7 @@ MISSING VALUES
     BTBS18A
         (-99).
 RENAME VARIABLES (
-    BTBS18A
-    =
-    SHomeW
+    BTBS18A = SSHomeW
     ).
 
 * S18B: Time for math homework.
@@ -409,9 +419,7 @@ MISSING VALUES
     BTBS18B
         (-99).
 RENAME VARIABLES (
-    BTBS18B
-    =
-    STimeHW
+    BTBS18B = SSTimeHW
     ).
 
 * S18C: Assessing science homework.
@@ -430,7 +438,7 @@ MISSING VALUES
 RENAME VARIABLES (
     BTBS18CA BTBS18CB BTBS18CC BTBS18CD BTBS18CE
     =
-    SHWCor SHWOwn SHWDis SHWMntr SHWGrd
+    SSHWCor SSHWOwn SSHWDis SSHWMntr SSHWGrd
     ).
 
 * S19: science assessment strategies.
@@ -449,7 +457,7 @@ MISSING VALUES
 RENAME VARIABLES (
     BTBS19A BTBS19B BTBS19C BTBS19D BTBS19E
     =
-    SAsObs SAsAsk SAsShort SAsLgTest SAsLgPro
+    SSAsObs SSAsAsk SSAsShort SSAsLgTest SSAsLgPro
     ).
 
 * S20: science test on computer.
@@ -468,7 +476,7 @@ MISSING VALUES
     BTBS20
         (-99).
 RENAME VARIABLES (
-    BTBS20 = STestPC
+    BTBS20 = SSTestPC
     ).
 
 * S21: PD to teach science: Past experience (A) and future needs (B).
@@ -490,8 +498,8 @@ RENAME VARIABLES (
     BTBS21AA BTBS21BA BTBS21AB BTBS21BB BTBS21AC BTBS21BC BTBS21AD
     BTBS21BD BTBS21AE BTBS21BE BTBS21AF BTBS21BF BTBS21AG BTBS21BG
     =
-    SPDPCont SPDFCont SPDPPed SPDFPed SPDPCur SPDFCur SPDPTech
-    SPDFTech SPDPCrit SPDFCrit SPDPAss SPDFAss SPDPNeed SPDFNeed
+    SSPDPCont SSPDFCont SSPDPPed SSPDFPed SSPDPCur SSPDFCur SSPDPTech
+    SSPDFTech SSPDPCrit SSPDFCrit SSPDPAss SSPDFAss SSPDPNeed SSPDFNeed
     ).
 
 * S22: Number of PD hours in science.
@@ -510,7 +518,7 @@ MISSING VALUES
     BTBS22
         (-99).
 RENAME VARIABLES (
-    BTBS22 = SPDHour
+    BTBS22 = SSPDHour
     ).
 
 **************************
@@ -541,7 +549,7 @@ MISSING VALUES
     BTBGEAS
         (-99).
 RENAME VARIABLES (
-    BTBGEAS = SCLSeas
+    BTBGEAS = SSCLSeas
     ).
 
 * TIMSS scale: Teaching limited by students not ready.
@@ -552,7 +560,7 @@ MISSING VALUES
     BTBGLSN
         (-99).
 RENAME VARIABLES (
-    BTBGLSN = SCLLimit
+    BTBGLSN = SSCLLimit
     ).
 
 * TIMSS scale: Safe and orderly school.
@@ -563,7 +571,7 @@ MISSING VALUES
     BTBGSOS
         (-99).
 RENAME VARIABLES (
-    BTBGSOS = SCLSafe
+    BTBGSOS = SSCLSafe
     ).
 
 * TIMSS scale: Teacher job satisfaction.
@@ -574,7 +582,7 @@ MISSING VALUES
     BTBGTJS
         (-99).
 RENAME VARIABLES (
-    BTBGTJS = SCLJob
+    BTBGTJS = SSCLJob
     ).
 
 * TIMSS scale: Teachers Emphasis on Science Investigation.
@@ -585,7 +593,7 @@ MISSING VALUES
     BTBSESI
         (-99).
 RENAME VARIABLES (
-    BTBSESI = SCLExprm
+    BTBSESI = SSCLExprm
     ).
 
 * TIMSS index: Safe and orderly school.
@@ -602,7 +610,7 @@ MISSING VALUES
     BTDGEAS
         (-99).
 RENAME VARIABLES (
-    BTDGEAS = IDXSeas
+    BTDGEAS = SIDXSeas
     ).
 
 * TIMSS index: Teacher job satisfaction.
@@ -619,7 +627,7 @@ MISSING VALUES
     BTDGLSN
         (-99).
 RENAME VARIABLES (
-    BTDGLSN = IDXLimit
+    BTDGLSN = SIDXLimit
     ).
 
 * TIMSS index: Teaching limited by students not ready.
@@ -636,7 +644,7 @@ MISSING VALUES
     BTDGSOS
         (-99).
 RENAME VARIABLES (
-    BTDGSOS = IDXSafe
+    BTDGSOS = SIDXSafe
     ).
 
 * TIMSS index: Teacher job satisfaction.
@@ -653,7 +661,7 @@ MISSING VALUES
     BTDGTJS
         (-99).
 RENAME VARIABLES (
-    BTDGTJS = IDXJob
+    BTDGTJS = SIDXJob
     ).
 
 * TIMSS index: Teachers Emphis on Science Investigation.
@@ -669,7 +677,7 @@ MISSING VALUES
     BTDSESI
         (-99).
 RENAME VARIABLES (
-    BTDSESI = IDXExprm
+    BTDSESI = SIDXExprm
     ).
 
 * Percent of teachers majored in education and science.
@@ -688,7 +696,7 @@ MISSING VALUES
     BTDSMSE
         (-99).
 RENAME VARIABLES (
-    BTDSMSE = STchMjr
+    BTDSMSE = SSTchMjr
     ).
 
 * Percent of students taught science topics.
@@ -699,7 +707,7 @@ MISSING VALUES
     BTDSBIO
         (-99).
 RENAME VARIABLES (
-    BTDSBIO = PTpBio
+    BTDSBIO = SPTpBio
     ).
 
 * Percent of students taught science topics.
@@ -710,7 +718,7 @@ MISSING VALUES
     BTDSCHE
         (-99).
 RENAME VARIABLES (
-    BTDSCHE = PTpChe
+    BTDSCHE = SPTpChe
     ).
 
 * Percent of students taught science topics.
@@ -721,7 +729,7 @@ MISSING VALUES
     BTDSPHY
         (-99).
 RENAME VARIABLES (
-    BTDSPHY = PTpPht
+    BTDSPHY = SPTpPht
     ).
 
 * Percent of students taught science topics.
@@ -732,14 +740,14 @@ MISSING VALUES
     BTDSEAR
         (-99).
 RENAME VARIABLES (
-    BTDSEAR = PTpEar
+    BTDSEAR = SPTpEar
     ).
 
 * Run script.
 EXECUTE.
 
 * Update data set.
-SAVE OUTFILE =
+*SAVE OUTFILE =
     "D:\TIMSS_2019\4_TIMSS_2019_G8_clean\TIMSS_2019_G8_clean.sav".
 
 ***** End script *****

@@ -171,10 +171,10 @@ MISSING VALUES
 
 *19: WEIGHT FOR MATHEMATICS TEACHER DATA.
 RECODE
-    MATWGT
+    SCIWGT
         (999999=-99) (SYSMIS=-99) (MISSING=-99).
 MISSING VALUES
-    MATWGT
+    SCIWGT
         (-99).
 
 *20: JACKKNIFE REPLICATE CODE.
@@ -286,16 +286,12 @@ RENAME VARIABLES (
     SBENCH1 SBENCH2 SBENCH3 SBENCH4 SBENCH5 
     ).
 
-**************************
-** Version control **
-**************************
-
-DELETE VARIABLES
-    idbid VERSION SCOPE
-    .
-
 * Run script.
 EXECUTE.
+
+DELETE VARIABLES
+    VERSION SCOPE idbid
+    .
 
 * Update data set.
 SAVE OUTFILE =

@@ -33,7 +33,7 @@ MISSING VALUES
     BTBG01
         (-99).
 RENAME VARIABLES (
-    BTBG01 = YearTeach
+    BTBG01 = MYearTeach
     ).
 
 * G2: Teacher gender.
@@ -49,7 +49,7 @@ MISSING VALUES
     BTBG02
         (-99).
 RENAME VARIABLES (
-    BTBG02 = TchMale
+    BTBG02 = MTchMale
     ).
 
 * G3: Teacher age.
@@ -69,7 +69,7 @@ MISSING VALUES
     BTBG03
         (-99).
 RENAME VARIABLES (
-    BTBG03 = AgeTeach
+    BTBG03 = MAgeTeach
     ).
 
 * G4: Teacher level of education.
@@ -90,7 +90,7 @@ MISSING VALUES
     BTBG04
         (-99).
 RENAME VARIABLES (
-    BTBG04 = EduLevel
+    BTBG04 = MEduLevel
     ).
 
 * G5: Teacher major area of study.
@@ -112,8 +112,8 @@ RENAME VARIABLES (
     BTBG05A BTBG05B BTBG05C BTBG05D BTBG05E
     BTBG05F BTBG05G BTBG05H BTBG05I
     =       
-    MajMath MajBio MajPhy MajChe MajEarth
-    MajEduM MajEduS MajEduG MajOther
+    MMajMath MMajBio MMajPhy MMajChe MMajEarth
+    MMajEduM MMajEduS MMajEduG MMajOther
     ).
 
 * G6: School emphasis on academic success (SEAS).
@@ -138,28 +138,33 @@ RENAME VARIABLES (
     BTBG06A BTBG06B BTBG06C BTBG06D BTBG06E BTBG06F
     BTBG06G BTBG06H BTBG06I BTBG06J BTBG06K BTBG06L
     =
-    STchUnd STchSuc STchExp STchAbi SParInv SParCom
-    SparExp SParSup SStudDes SRchGoal SResPeer Scollab
+    MSTchUnd MSTchSuc MSTchExp MSTchAbi MSParInv MSParCom
+    MSparExp MSParSup MSStudDes MSRchGoal MSResPeer MScollab
     ).
     
 * G7: Safety and orderly school.
 RECODE
-    BTBG07A BTBG07B BTBG07C BTBG07D BTBG07E BTBG07F BTBG07G BTBG07H
+    BTBG07A BTBG07B BTBG07C BTBG07D
+    BTBG07E BTBG07F BTBG07G BTBG07H
         (1=3) (2=2) (3=1) (4=0)
         (9=-99) (SYSMIS=-99) (MISSING=-99).
 VALUE LABELS
-    BTBG07A BTBG07B BTBG07C BTBG07D BTBG07E BTBG07F BTBG07G BTBG07H
+    BTBG07A BTBG07B BTBG07C BTBG07D
+    BTBG07E BTBG07F BTBG07G BTBG07H
         0 'Disagree a lot'
         1 'Disagree a little'
         2 'Agree a little'
         3 'Agree a lot'.
 MISSING VALUES
-    BTBG07A BTBG07B BTBG07C BTBG07D BTBG07E BTBG07F BTBG07G BTBG07H
+    BTBG07A BTBG07B BTBG07C BTBG07D
+    BTBG07E BTBG07F BTBG07G BTBG07H
         (-99).
 RENAME VARIABLES (
-    BTBG07A BTBG07B BTBG07C BTBG07D BTBG07E BTBG07F BTBG07G BTBG07H
+    BTBG07A BTBG07B BTBG07C BTBG07D
+    BTBG07E BTBG07F BTBG07G BTBG07H
     =
-    OSafeNgh OFeelSaf OSecPol OStdBhv OStdRes OResPro OClrRul ORulEnf
+    MOSafeNgh MOFeelSaf MOSecPol MOStdBhv
+    MOStdRes MOResPro MOClrRul MORulEnf
     ).
 
 * G8: Teacher job satisfaction.
@@ -179,7 +184,7 @@ MISSING VALUES
 RENAME VARIABLES (
     BTBG08A BTBG08B BTBG08C BTBG08D BTBG08E
     =
-    JContent JPurpose JEnthus JInspire JProud
+    MJContent MJPurpose MJEnthus MJInspire MJProud
     ).
 
 * G9: Teaching limitation.
@@ -203,8 +208,8 @@ RENAME VARIABLES (
     BTBG09A BTBG09B BTBG09C BTBG09D
     BTBG09E BTBG09F BTBG09G BTBG09H
     =
-    LManyStd LManyMat LManyHr LTimePrep
-    LTimeAss LMchPres LChgCur LManyAdm
+    MLManyStd MLManyMat MLManyHr MLTimePrep
+    MLTimeAss MLMchPres MLChgCur MLManyAdm
     ).
 
 * G10A: Number of student in the class.
@@ -215,7 +220,7 @@ MISSING VALUES
     BTBG10
         (-99).
 RENAME VARIABLES (
-    BTBG10 = NStdCl
+    BTBG10 = MNStdCl
     ).
 
 * G11: Number of students with language difficulties.
@@ -226,7 +231,7 @@ MISSING VALUES
     BTBG11
         (-99).
 RENAME VARIABLES (
-    BTBG11 = NStdLang
+    BTBG11 = MNStdLang
     ).
 
 * G12: Teaching practices.
@@ -246,7 +251,7 @@ MISSING VALUES
 RENAME VARIABLES (
     BTBG12A BTBG12B BTBG12C BTBG12D BTBG12E BTBG12F BTBG12G
     =
-    PDalyLiv PExpAns PChlgEx PClasDis PLnkKnow PPrbSolv PExpsIde
+    MPDalyLiv MPExpAns MPChlgEx MPClasDis MPLnkKnow MPPrbSolv MPExpsIde
     ).
 
 * G13: Students limitation.
@@ -265,7 +270,7 @@ MISSING VALUES
 RENAME VARIABLES (
     BTBG13A BTBG13B BTBG13C BTBG13D BTBG13E BTBG13F BTBG13G BTBG13H
     =
-    LLckKng LLckNut LLckSlep Labsent LDistStd LUninStd LMentImp LDifUnLg
+    MLLckKng MLLckNut MLLckSlep MLabsent MLDistStd MLUninStd MLMentImp MLDifUnLg
     ).
 
 * M14: Time spent on math instruction.
@@ -276,27 +281,32 @@ MISSING VALUES
     BTBM14
         (-99).
 RENAME VARIABLES (
-    BTBM14 = MathTime
+    BTBM14 = MMathTime
     ).
 
 * M15: Math teaching practices.
 RECODE
-    BTBM15A BTBM15B BTBM15C BTBM15D BTBM15E BTBM15F BTBM15G BTBM15H 
+    BTBM15A BTBM15B BTBM15C BTBM15D
+    BTBM15E BTBM15F BTBM15G BTBM15H 
         (1=3) (2=2) (3=1) (4=0)
         (9=-99) (SYSMIS=-99) (MISSING=-99).
 VALUE LABELS
-    BTBM15A BTBM15B BTBM15C BTBM15D BTBM15E BTBM15F BTBM15G BTBM15H
+    BTBM15A BTBM15B BTBM15C BTBM15D
+    BTBM15E BTBM15F BTBM15G BTBM15H
         0 'Never'
         1 'Some lessons'
         2 'About half the lessons'
         3 'Every or almost every lesson'.
 MISSING VALUES
-    BTBM15A BTBM15B BTBM15C BTBM15D BTBM15E BTBM15F BTBM15G BTBM15H
+    BTBM15A BTBM15B BTBM15C BTBM15D
+    BTBM15E BTBM15F BTBM15G BTBM15H
         (-99).
 RENAME VARIABLES (
-    BTBM15A BTBM15B BTBM15C BTBM15D BTBM15E BTBM15F BTBM15G BTBM15H
+    BTBM15A BTBM15B BTBM15C BTBM15D
+    BTBM15E BTBM15F BTBM15G BTBM15H
     =
-    MTExpln MTSolve MTMemrz MTPract MTApply MTWork MTMixAb MTSameAb
+    MMTExpln MMTSolve MMTMemrz MMTPract
+    MMTApply MMTWork MMTMixAb MMTSameAb
     ).
     
 * M16: Math teaching and access to calculator.
@@ -313,9 +323,7 @@ MISSING VALUES
     BTBM16
         (-99).
 RENAME VARIABLES (
-    BTBM16
-    =
-    MUseCal
+    BTBM16 = MMUseCal
     ).
 
 * M17: Mathteaching and access to computer.
@@ -333,7 +341,7 @@ MISSING VALUES
 RENAME VARIABLES (
     BTBM17A BTBM17BA BTBM17BB BTBM17BC
     =
-    MPCAva MPCStd MPCClas MPCSch
+    MMPCAva MMPCStd MMPCClas MMPCSch
     ).
 
 
@@ -354,41 +362,41 @@ MISSING VALUES
 RENAME VARIABLES (
     BTBM17CA BTBM17CB BTBM17CC BTBM17CD
     =
-    MLpcClas MLpcLow MLpcHigh MLpcNeed
+    MMLpcClas MMLpcLow MMLpcHigh MMLpcNeed
     ).
 
 * M18: Mathematics topics taught to use the TIMSS class.
 RECODE
-    BTBM18AA BTBM18AB BTBM18AC
-    BTBM18BA BTBM18BB BTBM18BC BTBM18BD BTBM18BE BTBM18BF BTBM18BG
-    BTBM18CA BTBM18CB BTBM18CC BTBM18CD BTBM18CE BTBM18CF
-    BTBM18DA BTBM18DB BTBM18DC BTBM18DD BTBM18DE BTBM18DF
+    BTBM18AA BTBM18AB BTBM18AC BTBM18BA BTBM18BB BTBM18BC
+    BTBM18BD BTBM18BE BTBM18BF BTBM18BG BTBM18CA BTBM18CB
+    BTBM18CC BTBM18CD BTBM18CE BTBM18CF BTBM18DA BTBM18DB
+    BTBM18DC BTBM18DD BTBM18DE BTBM18DF
         (1=1) (2=2) (3=0)
         (9=-99) (SYSMIS=-99) (MISSING=-99).
 VALUE LABELS
-    BTBM18AA BTBM18AB BTBM18AC
-    BTBM18BA BTBM18BB BTBM18BC BTBM18BD BTBM18BE BTBM18BF BTBM18BG
-    BTBM18CA BTBM18CB BTBM18CC BTBM18CD BTBM18CE BTBM18CF
-    BTBM18DA BTBM18DB BTBM18DC BTBM18DD BTBM18DE BTBM18DF
+    BTBM18AA BTBM18AB BTBM18AC BTBM18BA BTBM18BB BTBM18BC
+    BTBM18BD BTBM18BE BTBM18BF BTBM18BG BTBM18CA BTBM18CB
+    BTBM18CC BTBM18CD BTBM18CE BTBM18CF BTBM18DA BTBM18DB
+    BTBM18DC BTBM18DD BTBM18DE BTBM18DF
         0 'Not yet taught or just introduced'
         1 'Mostly taught before this year'
         2 'Mostly taught this year'.
 MISSING VALUES
-    BTBM18AA BTBM18AB BTBM18AC
-    BTBM18BA BTBM18BB BTBM18BC BTBM18BD BTBM18BE BTBM18BF BTBM18BG
-    BTBM18CA BTBM18CB BTBM18CC BTBM18CD BTBM18CE BTBM18CF
-    BTBM18DA BTBM18DB BTBM18DC BTBM18DD BTBM18DE BTBM18DF
+    BTBM18AA BTBM18AB BTBM18AC BTBM18BA BTBM18BB BTBM18BC
+    BTBM18BD BTBM18BE BTBM18BF BTBM18BG BTBM18CA BTBM18CB
+    BTBM18CC BTBM18CD BTBM18CE BTBM18CF BTBM18DA BTBM18DB
+    BTBM18DC BTBM18DD BTBM18DE BTBM18DF
         (-99).
 RENAME VARIABLES (
-    BTBM18AA BTBM18AB BTBM18AC
-    BTBM18BA BTBM18BB BTBM18BC BTBM18BD BTBM18BE BTBM18BF BTBM18BG
-    BTBM18CA BTBM18CB BTBM18CC BTBM18CD BTBM18CE BTBM18CF
-    BTBM18DA BTBM18DB BTBM18DC BTBM18DD BTBM18DE BTBM18DF
+    BTBM18AA BTBM18AB BTBM18AC BTBM18BA BTBM18BB BTBM18BC
+    BTBM18BD BTBM18BE BTBM18BF BTBM18BG BTBM18CA BTBM18CB
+    BTBM18CC BTBM18CD BTBM18CE BTBM18CF BTBM18DA BTBM18DB
+    BTBM18DC BTBM18DD BTBM18DE BTBM18DF
     =
-    MTopNum MTopFrac MTopPro
-    MTopSimp MTopEqu MTopInq MTopSim MTopFRep MTopFPro MTopNrc
-    MTopGeo MTopPer MTopPhy MTopTrn MTopFig MTopDim
-    MTopData MTopCol MTopRep MTopSts MTopPrb MTopCom
+    MMTopNum MMTopFrac MMTopPro MMTopSimp MMTopEqu MMTopInq
+    MMTopSim MMTopFRep MMTopFPro MMTopNrc MMTopGeo MMTopPer
+    MMTopPhy MMTopTrn MMTopFig MMTopDim MMTopData MMTopCol
+    MMTopRep MMTopSts MMTopPrb MMTopCom
     ).
 
 * M19: Time for math homework.
@@ -407,7 +415,7 @@ MISSING VALUES
     BTBM19A
         (-99).
 RENAME VARIABLES (
-    BTBM19A = MHomeW 
+    BTBM19A = MMHomeW 
     ).
 
 * M19B: Time for math homework.
@@ -425,7 +433,7 @@ MISSING VALUES
     BTBM19B
         (-99).
 RENAME VARIABLES (
-    BTBM19B = MTimeHW
+    BTBM19B = MMTimeHW
     ).
 
 * M19C: Assessing mathematics homework.
@@ -444,7 +452,7 @@ MISSING VALUES
 RENAME VARIABLES (
     BTBM19CA BTBM19CB BTBM19CC BTBM19CD BTBM19CE
     =
-    MHWCor MHWOwn MHWDis MHWMntr MHWGrd
+    MMHWCor MMHWOwn MMHWDis MMHWMntr MMHWGrd
     ).
 
 * M20: Math assessment strategies.
@@ -463,7 +471,7 @@ MISSING VALUES
 RENAME VARIABLES (
     BTBM20A BTBM20B BTBM20C BTBM20D BTBM20E
     =
-    MAsObs MAsAsk MAsShort MAsLgTest MAsLgPro
+    MMAsObs MMAsAsk MMAsShort MMAsLgTest MMAsLgPro
     ).
 
 * M21: Math test on computer.
@@ -482,7 +490,7 @@ MISSING VALUES
     BTBM21
         (-99).
 RENAME VARIABLES (
-    BTBM21 = MTestPC
+    BTBM21 = MMTestPC
     ).
 
 * M22: PD to teach mathematics: Past experience (A) and future needs (B).
@@ -504,8 +512,8 @@ RENAME VARIABLES (
     BTBM22AA BTBM22BA BTBM22AB BTBM22BB BTBM22AC BTBM22BC BTBM22AD
     BTBM22BD BTBM22AE BTBM22BE BTBM22AF BTBM22BF BTBM22AG BTBM22BG
     =
-    MPDPCont MPDFCont MPDPPed MPDFPed MPDPCur MPDFCur MPDPTech MPDFTech
-    MPDPProb MPDFProb MPDPAss MPDFAss MPDPNeed MPDFNeed
+    MMPDPCont MMPDFCont MMPDPPed MMPDFPed MMPDPCur MMPDFCur MMPDPTech
+    MMPDFTech MMPDPProb MMPDFProb MMPDPAss MMPDFAss MMPDPNeed MMPDFNeed
     ).
 
 * M23: Number of PD hours in mathematics.
@@ -524,7 +532,7 @@ MISSING VALUES
     BTBM23
         (-99).
 RENAME VARIABLES (
-    BTBM23 = MPDHour
+    BTBM23 = MMPDHour
     ).
 
 
@@ -556,7 +564,7 @@ MISSING VALUES
     BTBGEAS
         (-99).
 RENAME VARIABLES (
-    BTBGEAS = SCLSeas
+    BTBGEAS = MSCLSeas
     ).
 
 * TIMSS scale: Teaching limited by students not ready.
@@ -567,7 +575,7 @@ MISSING VALUES
     BTBGLSN
         (-99).
 RENAME VARIABLES (
-    BTBGLSN = SCLLimit
+    BTBGLSN = MSCLLimit
     ).
 
 * TIMSS scale: Safe and orderly school.
@@ -578,7 +586,7 @@ MISSING VALUES
     BTBGSOS
         (-99).
 RENAME VARIABLES (
-    BTBGSOS = SCLSafe
+    BTBGSOS = MSCLSafe
     ).
 
 * TIMSS scale: Teacher job satisfaction.
@@ -589,7 +597,7 @@ MISSING VALUES
     BTBGTJS
         (-99).
 RENAME VARIABLES (
-    BTBGTJS = SCLJob
+    BTBGTJS = MSCLJob
     ).
 
 * TIMSS scale: Teachers Emphasis on Science Investigation.
@@ -600,7 +608,7 @@ MISSING VALUES
     BTBSESI
         (-99).
 RENAME VARIABLES (
-    BTBSESI = SCLExprm
+    BTBSESI = MSCLExprm
     ).
 
 * TIMSS index: SEAS.
@@ -617,7 +625,7 @@ MISSING VALUES
     BTDGEAS
         (-99).
 RENAME VARIABLES (
-    BTDGEAS = IDXSeas
+    BTDGEAS = MIDXSeas
     ).
 
 * TIMSS index: Teaching limited by students not ready.
@@ -634,7 +642,7 @@ MISSING VALUES
     BTDGLSN
         (-99).
 RENAME VARIABLES (
-    BTDGLSN = IDXLimit
+    BTDGLSN = MIDXLimit
     ).
 
 * TIMSS index: Safe and orderly school.
@@ -651,7 +659,7 @@ MISSING VALUES
     BTDGSOS
         (-99).
 RENAME VARIABLES (
-    BTDGSOS = IDXSafe
+    BTDGSOS = MIDXSafe
     ).
 
 * TIMSS index: Teacher job satisfaction.
@@ -668,7 +676,7 @@ MISSING VALUES
     BTDGTJS
         (-99).
 RENAME VARIABLES (
-    BTDGTJS = IDXJob
+    BTDGTJS = MIDXJob
     ).
 
 * Percent of teachers majored in education and math.
@@ -687,7 +695,7 @@ MISSING VALUES
     BTDMMME
         (-99).
 RENAME VARIABLES (
-    BTDMMME = MTchMjr
+    BTDMMME = MMTchMjr
     ).
 
 * Percent of students taught math topics.
@@ -698,7 +706,7 @@ MISSING VALUES
     BTDMNUM
         (-99).
 RENAME VARIABLES (
-    BTDMNUM = PTpNumb
+    BTDMNUM = MPTpNumb
     ).
 
 * Percent of students taught math topics.
@@ -709,7 +717,7 @@ MISSING VALUES
     BTDMALG
         (-99).
 RENAME VARIABLES (
-    BTDMALG = PTpAlg
+    BTDMALG = MPTpAlg
     ).
 
 * Percent of students taught math topics.
@@ -720,7 +728,7 @@ MISSING VALUES
     BTDMGEO
         (-99).
 RENAME VARIABLES (
-    BTDMGEO = PTpGeo
+    BTDMGEO = MPTpGeo
     ).
 
 * Percent of students taught math topics.
@@ -731,7 +739,7 @@ MISSING VALUES
     BTDMDAT
         (-99).
 RENAME VARIABLES (
-    BTDMDAT = PTpData
+    BTDMDAT = MPTpData
     ).
 
 * Run script.
@@ -742,3 +750,4 @@ SAVE OUTFILE =
     "D:\TIMSS_2019\4_TIMSS_2019_G8_clean\TIMSS_2019_G8_clean.sav".
 
 ***** End script *****
+
