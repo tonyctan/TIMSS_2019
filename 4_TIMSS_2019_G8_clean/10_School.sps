@@ -26,7 +26,7 @@ GET FILE =
 ** School variables **
 **************************
 
-* 03: Percentage of disadvantaged students attending the school.
+* 3: Percentage of disadvantaged students attending the school.
 RECODE
     BCBG03A BCBG03B
         (1=0) (2=1) (3=2) (4=3)
@@ -46,7 +46,7 @@ RENAME VARIABLES (
     SchDisad SchEco
     ).
 
-* 04: Percentage of students having the language of test as their native language.
+* 4: Percentage of students having the language of test as their native language.
 RECODE
     BCBG04
         (1=4) (2=3) (3=2) (4=1) (5=0)
@@ -65,7 +65,7 @@ RENAME VARIABLES (
     BCBG04 = SchLang
     ).
 
-* 05A: Number of people live in the school area.
+* 5A: Number of people live in the school area.
 RECODE
     BCBG05A
         (1=6) (2=5) (3=4) (4=3) (5=2) (6=1) (7=0)
@@ -86,7 +86,7 @@ RENAME VARIABLES (
     BCBG05A = SchPop
     ).
 
-* 05B: School location.
+* 5B: School location.
 RECODE
     BCBG05B
         (9=-99) (SYSMIS=-99) (MISSING=-99).
@@ -97,7 +97,7 @@ RENAME VARIABLES (
     BCBG05B = SchArea
     ).
 
-* 06AB: Instructional time.
+* 6A and 6B: Instructional time.
 RECODE
     BCBG06A BCBG06B
         (999=-99) (SYSMIS=-99) (MISSING=-99).
@@ -110,7 +110,7 @@ RENAME VARIABLES (
     SchDays SchTime
     ).
 
-* 06C: Instructional time.
+* 6C: Instructional time.
 RECODE
     BCBG06C
         (1=4) (2=3) (3=2) (4=1) (5=0) (6=5)
@@ -130,7 +130,7 @@ RENAME VARIABLES (
     BCBG06C = InstDay
     ).
 
-* 07: Number of computers at school.
+* 7: Number of computers at school.
 RECODE
     BCBG07
         (9999=-99) (SYSMIS=-99) (MISSING=-99).
@@ -141,7 +141,10 @@ RENAME VARIABLES (
     BCBG07 = NumComp
     ).
 
-* 08AB,9,10A: Science laborat, Available assisstant for experiment,Access to learning management system,School library.
+* 8A: Science laborat.
+* 8B: Available assisstant for experiment.
+* 9: Access to learning management system.
+* 10A: School library.
 RECODE
     BCBG08A BCBG08B BCBG09 BCBG10A
         (1=1) (2=0)
@@ -170,7 +173,8 @@ RENAME VARIABLES (
     BCBG10B = ManyBook
     ).
 
-* 11,12: Classroom library, Access to digital learning resources.
+* 11: Classroom library.
+* 12: Access to digital learning resources.
 RECODE
     BCBG11 BCBG12
         (1=1) (2=0)
@@ -190,32 +194,32 @@ RENAME VARIABLES (
 
 * 13: Shortage affecting school’s capacity to provide general instruction.
 RECODE
-    BCBG13AA BCBG13AB BCBG13AC BCBG13AD BCBG13AE BCBG13AF
-    BCBG13AG BCBG13AH BCBG13AI BCBG13BA BCBG13BB BCBG13BC
-    BCBG13BD BCBG13BE BCBG13CA BCBG13CB BCBG13CC BCBG13CD 
+    BCBG13AA BCBG13AB BCBG13AC BCBG13AD BCBG13AE BCBG13AF BCBG13AG BCBG13AH BCBG13AI
+    BCBG13BA BCBG13BB BCBG13BC BCBG13BD BCBG13BE
+    BCBG13CA BCBG13CB BCBG13CC BCBG13CD BCBG13CE
         (1=0) (2=1) (3=2) (4=3)
         (9=-99) (SYSMIS=-99) (MISSING=-99).
 VALUE LABELS
-    BCBG13AA BCBG13AB BCBG13AC BCBG13AD BCBG13AE BCBG13AF
-    BCBG13AG BCBG13AH BCBG13AI BCBG13BA BCBG13BB BCBG13BC
-    BCBG13BD BCBG13BE BCBG13CA BCBG13CB BCBG13CC BCBG13CD
+    BCBG13AA BCBG13AB BCBG13AC BCBG13AD BCBG13AE BCBG13AF BCBG13AG BCBG13AH BCBG13AI
+    BCBG13BA BCBG13BB BCBG13BC BCBG13BD BCBG13BE
+    BCBG13CA BCBG13CB BCBG13CC BCBG13CD BCBG13CE
         0 'Not at all'
         1 'A little'
         2 'Some'
         3 'A lot'.
 MISSING VALUES
-    BCBG13AA BCBG13AB BCBG13AC BCBG13AD BCBG13AE BCBG13AF
-    BCBG13AG BCBG13AH BCBG13AI BCBG13BA BCBG13BB BCBG13BC
-    BCBG13BD BCBG13BE BCBG13CA BCBG13CB BCBG13CC BCBG13CD
+    BCBG13AA BCBG13AB BCBG13AC BCBG13AD BCBG13AE BCBG13AF BCBG13AG BCBG13AH BCBG13AI
+    BCBG13BA BCBG13BB BCBG13BC BCBG13BD BCBG13BE
+    BCBG13CA BCBG13CB BCBG13CC BCBG13CD BCBG13CE
         (-99).
 RENAME VARIABLES (
-    BCBG13AA BCBG13AB BCBG13AC BCBG13AD BCBG13AE BCBG13AF
-    BCBG13AG BCBG13AH BCBG13AI BCBG13BA BCBG13BB BCBG13BC
-    BCBG13BD BCBG13BE BCBG13CA BCBG13CB BCBG13CC BCBG13CD
+    BCBG13AA BCBG13AB BCBG13AC BCBG13AD BCBG13AE BCBG13AF BCBG13AG BCBG13AH BCBG13AI
+    BCBG13BA BCBG13BB BCBG13BC BCBG13BD BCBG13BE
+    BCBG13CA BCBG13CB BCBG13CC BCBG13CD BCBG13CE
     =
-    SrtMatrl SrtSuply SrtBuild SrtHeat SrtSpace SrtTech
-    SrtAudio SrtComp SrtDisab SrtMTch SrtMComp SrtMLib
-    SrtMCal SrtMEqu SrtSTch SrtSComp SrtSLib SrtSEqu 
+    SrtMatrl SrtSuply SrtBuild SrtHeat SrtSpace SrtTech SrtAudio SrtComp SrtDisab
+    SrtMTch SrtMComp SrtMLib SrtMCal SrtMEqu
+    SrtSTch SrtSComp SrtSLib SrtSCal SrtSEqu 
     ).
 
 * 14: School emphasis on academic success.
@@ -271,24 +275,24 @@ RENAME VARIABLES (
 
 * 16: School discipline and safety.
 RECODE
-    BCBG16A ACBG16B ACBG16C ACBG16D ACBG16E
-    ACBG16F ACBG16G ACBG16H ACBG16I ACBG16J ACBG16K
+    BCBG16A BCBG16B BCBG16C BCBG16D BCBG16E
+    BCBG16F BCBG16G BCBG16H BCBG16I BCBG16J BCBG16K
         (1=0) (2=1) (3=2) (4=3)
         (9=-99) (SYSMIS=-99) (MISSING=-99).
 VALUE LABELS
-    BCBG16A ACBG16B ACBG16C ACBG16D ACBG16E
-    ACBG16F ACBG16G ACBG16H ACBG16I ACBG16J ACBG16K
+    BCBG16A BCBG16B BCBG16C BCBG16D BCBG16E
+    BCBG16F BCBG16G BCBG16H BCBG16I BCBG16J BCBG16K
         0 'Not a problem'
         1 'Minor problem'
         2 'Moderate problem'
         3 'Serious problem'.
 MISSING VALUES
-    BCBG16A ACBG16B ACBG16C ACBG16D ACBG16E
-    ACBG16F ACBG16G ACBG16H ACBG16I ACBG16J ACBG16K
+    BCBG16A BCBG16B BCBG16C BCBG16D BCBG16E
+    BCBG16F BCBG16G BCBG16H BCBG16I BCBG16J BCBG16K
         (-99).
 RENAME VARIABLES (
-    BCBG16A ACBG16B ACBG16C ACBG16D ACBG16E
-    ACBG16F ACBG16G ACBG16H ACBG16I ACBG16J ACBG16K
+    BCBG16A BCBG16B BCBG16C BCBG16D BCBG16E
+    BCBG16F BCBG16G BCBG16H BCBG16I BCBG16J BCBG16K
     =
     SDLate SDAbsnt SDDistrb SDCheat SDProfnt SDVandl
     SDTheft SDIntim SDInjuSt SDAbuse SDInjuTc 
@@ -314,7 +318,7 @@ RENAME VARIABLES (
     TchLate TchAbsent 
     ).
 
-* 18,19: Principal years of experience.
+* 18 and 19: Principal years of experience.
 RECODE
     BCBG18 BCBG19
         (1=0) (2=1) (3=2) (4=3)
@@ -364,7 +368,7 @@ RENAME VARIABLES (
     PrLdrCer PrLdrMas PrLdrDoc
     ).
 
-* Locale ID of School Questionnaire.
+* Language of school questionnaire.
 RECODE
     ITLANG_C
         (99=-99) (SYSMIS=-99) (MISSING=-99).
@@ -372,7 +376,7 @@ MISSING VALUES
     ITLANG_C
         (-99).
  
-* Language of School Questionnaire.
+* Locale ID of school questionnaire.
 RECODE
     LCID_C
         (9999999999=-99) (SYSMIS=-99) (MISSING=-99).
@@ -380,7 +384,7 @@ MISSING VALUES
     LCID_C
         (-99).
 
-* TIMSS construct: School Discipline-Principal.
+* TIMSS construct: School discipline-principal.
 RECODE
     BCBGDAS
         (999999=-99) (SYSMIS=-99) (MISSING=-99).
@@ -402,7 +406,7 @@ RENAME VARIABLES (
     BCBGEAS = SCLseas
     ).
 
-* TIMSS construct: Instruction Affected by Math Resource Shortage.
+* TIMSS construct: Instruction affected by math resource shortage.
 RECODE
     BCBGMRS
         (999999=-99) (SYSMIS=-99) (MISSING=-99).
@@ -413,7 +417,7 @@ RENAME VARIABLES (
     BCBGMRS = SCLMRes
     ).
 
-* TIMSS construct: Instruction Affected by Science Resource Shortage.
+* TIMSS construct: Instruction affected by science resource shortage.
 RECODE
     BCBGSRS
         (999999=-99) (SYSMIS=-99) (MISSING=-99).
@@ -424,7 +428,7 @@ RENAME VARIABLES (
     BCBGSRS = SCLSRes
     ).
 
-* TIMSS construct: School Discipline-Principal.
+* TIMSS construct: School discipline-principal.
 RECODE
     BCDGDAS
         (1=0) (2=1) (3=2)
@@ -448,7 +452,7 @@ RENAME VARIABLES (
     BCDGEAS = IDXseas
     ).
 
-* TIMSS construct: Instruction Affected by Math Resource Shortage.
+* TIMSS construct: Instruction affected by math resource shortage.
 RECODE
     BCDGMRS
         (1=0) (2=1) (3=2)
@@ -460,7 +464,7 @@ RENAME VARIABLES (
     BCDGMRS = IDXMRes
     ).
 
-* TTIMSS construct: Instruction Affected by Science Resource Shortage.
+* TTIMSS construct: Instruction affected by science resource shortage.
 RECODE
     BCDGSRS
         (1=0) (2=1) (3=2)
@@ -472,7 +476,7 @@ RENAME VARIABLES (
     BCDGSRS = IDXSRes
     ).
 
-* School Composition by Socioeconomic Background.
+* School Composition by socioeconomic background.
 RECODE
     BCDGSBC
         (1=2) (2=1) (3=0)
@@ -499,7 +503,7 @@ RENAME VARIABLES (
 EXECUTE.
 
 * Update data set.
-*SAVE OUTFILE =
+SAVE OUTFILE =
     "D:\TIMSS_2019\4_TIMSS_2019_G8_clean\TIMSS_2019_G8_clean.sav".
 
 ***** End script *****

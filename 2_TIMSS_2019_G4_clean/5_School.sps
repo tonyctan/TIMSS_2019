@@ -238,14 +238,14 @@ MISSING VALUES
     ACBG14E ACBG14F ACBG14G ACBG14H
     ACBG14I ACBG14J ACBG14K
         (-99).
-*RENAME VARIABLES (
+RENAME VARIABLES (
     ACBG14A ACBG14B ACBG14C ACBG14D
     ACBG14E ACBG14F ACBG14G ACBG14H
     ACBG14I ACBG14J ACBG14K
     =
-    STchUnd STchSuc STchExp STchIns
-    SParInv SParCom SParExp SParSupp
-    SStdWell SStdGoal SStdResp
+    STchUndC STchSucC STchExpC STchInsC
+    SParInvC SParComC SParExpC SParSuppC
+    SStdWellC SStdGoalC SStdRespC
     ).
 
 * 15: School discipline and safety.
@@ -450,8 +450,8 @@ RECODE
 MISSING VALUES
     ACBGEAS
         (-99).
-*RENAME VARIABLES (
-*    ACBGEAS = SCLseas
+RENAME VARIABLES (
+    ACBGEAS = SCLseasC
     ).
 
 * TIMSS construct: SEAS principal.
@@ -467,8 +467,8 @@ VALUE LABELS
 MISSING VALUES
     ACDGEAS
         (-99).
-*RENAME VARIABLES (
-*    ACDGEAS = IDXseas
+RENAME VARIABLES (
+    ACDGEAS = IDXseasC
     ).
 
 * TIMSS construct: School discipline--principal.

@@ -1332,6 +1332,22 @@ RENAME VARIABLES (
     ITADMINI = TestAdm
     ).
 
+* Weight adjustment and weight factor.
+* Check for missing weights.
+*FREQUENCIES
+    WGTADJ1 WGTADJ2 WGTADJ3
+    WGTFAC1 WGTFAC2 WGTFAC3
+        /FORMAT = NOTABLE.
+* Since there existed missings, code missing ticket to -99.
+RECODE
+    WGTADJ1 WGTADJ2 WGTADJ3
+    WGTFAC1 WGTFAC2 WGTFAC3
+        (999999=-99) (SYSMIS=-99) (MISSING=-99).
+MISSING VALUES
+    WGTADJ1 WGTADJ2 WGTADJ3
+    WGTFAC1 WGTFAC2 WGTFAC3
+        (-99).
+
 **************************
 ** Compound Variables **
 **************************

@@ -151,8 +151,8 @@ RENAME VARIABLES (
     ATBG06A ATBG06B ATBG06C ATBG06D ATBG06E ATBG06F
     ATBG06G ATBG06H ATBG06I ATBG06J ATBG06K ATBG06L
     =
-    STchUnd STchSuc STchExp STchAbi SParInv SParCom
-    SparExp SParSup SStudDes SRchGoal SResPeer Scollab
+    STchUndT STchSucT STchExpT STchAbiT SParInvT SParComT
+    SparExpT SParSupT SStudDesT SRchGoalT SResPeerT ScollabT
     ).
 
 * G7: Safety and orderly school.
@@ -842,7 +842,7 @@ MISSING VALUES
     ATBGEAS
         (-99).
 RENAME VARIABLES (
-    ATBGEAS = SCLSeas
+    ATBGEAS = SCLSeasT
     ).
 
 RECODE
@@ -858,7 +858,7 @@ MISSING VALUES
     ATDGEAS
         (-99).
 RENAME VARIABLES (
-    ATDGEAS = IDXSeas
+    ATDGEAS = IDXSeasT
     ).
 
 * TIMSS compound variables: Safe and orderly school.
