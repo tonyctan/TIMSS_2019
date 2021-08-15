@@ -1,7 +1,4 @@
 * Encoding: UTF-8.
-* Script created using the IEA IDB Analyzer (Version 4.0.44).
-* Created on 17/07/2021 at 20:55.
-* Press Ctrl+A followed by Ctrl+R to submit this merge. 
 
 include file = "C:\Program Files (x86)\IEA\IDBAnalyzerV4\bin\Data\Templates\SPSS_Macros\IDBAnalyzer.ieasps".
 include file = "D:\TIMSS_2019\1_TIMSS_2019_G4_merge\IDBAnalyzerCountries.ieasps".
