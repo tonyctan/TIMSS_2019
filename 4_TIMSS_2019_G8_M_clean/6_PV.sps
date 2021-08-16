@@ -13,13 +13,13 @@
 * Cycle: 2019
 * Questionnaire: (Plausible values)
 * Grade: Grade 8
-* Subject: Math and Science
+* Subject: Math
 
 ***** Begin script *****
 
 * Import data.
 GET FILE =
-    "D:\TIMSS_2019\3_TIMSS_2019_G8_merge\TIMSS_2019_G8_import.sav".
+    "D:\TIMSS_2019\3_TIMSS_2019_G8_merge\TIMSS_2019_G8_M_import.sav".
 
 **************************
 ** Admin variables **
@@ -171,10 +171,10 @@ MISSING VALUES
 
 *19: WEIGHT FOR MATHEMATICS TEACHER DATA.
 RECODE
-    SCIWGT
+    MATWGT
         (999999=-99) (SYSMIS=-99) (MISSING=-99).
 MISSING VALUES
-    SCIWGT
+    MATWGT
         (-99).
 
 *20: JACKKNIFE REPLICATE CODE.
@@ -295,6 +295,6 @@ DELETE VARIABLES
 
 * Update data set.
 SAVE OUTFILE =
-    "D:\TIMSS_2019\4_TIMSS_2019_G8_clean\TIMSS_2019_G8_clean.sav".
+    "D:\TIMSS_2019\4_TIMSS_2019_G8_M_clean\TIMSS_2019_G8_M_clean.sav".
 
 ***** End script *****

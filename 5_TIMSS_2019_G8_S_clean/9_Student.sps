@@ -13,13 +13,13 @@
 * Cycle: 2019
 * Questionnaire: Student
 * Grade: Grade 8
-* Subject: Math and Science
+* Subject: Science
 
 ***** Begin script *****
 
-* Import data.
-GET FILE =
-    "D:\TIMSS_2019\4_TIMSS_2019_G8_clean\TIMSS_2019_G8_clean.sav".
+* Import data.GET FILE =
+    "D:\TIMSS_2019\5_TIMSS_2019_G8_S_clean\TIMSS_2019_G8_S_clean.sav".
+
 
 **************************
 ** Student variables **
@@ -1257,7 +1257,7 @@ RECODE
     ITLANG_SQ
         (99=-99) (SYSMIS=-99) (MISSING=-99).
 MISSING VALUES
-    ITLANG_T
+    ITLANG_SQ
         (-99).
 
 * Locale ID of student context questionnaire.
@@ -1286,9 +1286,10 @@ MISSING VALUES
 
 * Student gender.
 FREQUENCIES
-    ITSEX BSBG01
+    GendBoy
+    ITSEX BSDAGE
         /FORMAT NOTABLE.
-* ITSEX != BSBG01. CAN NOT DELETE VARIABLE ASK NANI.
+* ITSEX != BSBG01 (renamed to GendBoy). Do not delete ITSEX. Rename to SexBoy, then ask Nani.
 
 RECODE
     ITSEX
@@ -1315,6 +1316,7 @@ MISSING VALUES
 RENAME VARIABLES (
     BSDAGE = StdAge
     ).
+
 * Test administrator position.
 RECODE
     ITADMINI
@@ -1332,13 +1334,6 @@ RENAME VARIABLES (
     ITADMINI = TestAdm
     ).
 
-* Weight adjustment and weight factor.
-* Check for missing weights.
-*FREQUENCIES
-    WGTADJ1 WGTADJ2 WGTADJ3
-    WGTFAC1 WGTFAC2 WGTFAC3
-        /FORMAT = NOTABLE.
-* Since there existed missings, code missing ticket to -99.
 RECODE
     WGTADJ1 WGTADJ2 WGTADJ3
     WGTFAC1 WGTFAC2 WGTFAC3
@@ -2121,6 +2116,6 @@ EXECUTE.
 
 * Update data set.
 SAVE OUTFILE =
-    "D:\TIMSS_2019\4_TIMSS_2019_G8_clean\TIMSS_2019_G8_clean.sav".
+    "D:\TIMSS_2019\5_TIMSS_2019_G8_S_clean\TIMSS_2019_G8_S_clean.sav".
 
 ***** End script *****

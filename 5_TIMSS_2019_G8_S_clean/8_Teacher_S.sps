@@ -13,13 +13,13 @@
 * Cycle: 2019
 * Questionnaire: Teacher Science
 * Grade: Grade 8
-* Subject: Math and Science
+* Subject: Science
 
 ***** Begin script *****
 
 * Import data.
 GET FILE =
-    "D:\TIMSS_2019\4_TIMSS_2019_G8_clean\TIMSS_2019_G8_clean.sav".
+    "D:\TIMSS_2019\5_TIMSS_2019_G8_S_clean\TIMSS_2019_G8_S_clean.sav".
 
 **************************
 ** Teacher variables **
@@ -33,7 +33,7 @@ MISSING VALUES
     BTBG01
         (-99).
 RENAME VARIABLES (
-    BTBG01 = SYearTeach
+    BTBG01 = YearTeach
     ).
 
 * G2: Teacher gender.
@@ -49,7 +49,7 @@ MISSING VALUES
     BTBG02
         (-99).
 RENAME VARIABLES (
-    BTBG02 = STchMale
+    BTBG02 = TchMale
     ).
 
 * G3: Teacher age.
@@ -69,7 +69,7 @@ MISSING VALUES
     BTBG03
         (-99).
 RENAME VARIABLES (
-    BTBG03 = SAgeTeach
+    BTBG03 = AgeTeach
     ).
 
 * G4: Teacher level of education.
@@ -90,7 +90,7 @@ MISSING VALUES
     BTBG04
         (-99).
 RENAME VARIABLES (
-    BTBG04 = SEduLevel
+    BTBG04 = EduLevel
     ).
 
 * G5: Teacher major area of study.
@@ -112,8 +112,8 @@ RENAME VARIABLES (
     BTBG05A BTBG05B BTBG05C BTBG05D BTBG05E
     BTBG05F BTBG05G BTBG05H BTBG05I
     =       
-    SMajMath SMajBio SMajPhy SMajChe SMajEarth
-    SMajEduM SMajEduS SMajEduG SMajOther
+    MajMath MajBio MajPhy MajChe MajEarth
+    MajEduM MajEduS MajEduG MajOther
     ).
 
 * G6: School emphasis on academic success (SEAS).
@@ -160,8 +160,8 @@ RENAME VARIABLES (
     BTBG07A BTBG07B BTBG07C BTBG07D
     BTBG07E BTBG07F BTBG07G BTBG07H
     =
-    SOSafeNgh SOFeelSaf SOSecPol SOStdBhv
-    SOStdRes SOResPro SOClrRul SORulEnf
+    OSafeNgh OFeelSaf OSecPol OStdBhv
+    OStdRes OResPro OClrRul ORulEnf
     ).
 
 * G8: Teacher job satisfaction.
@@ -181,7 +181,7 @@ MISSING VALUES
 RENAME VARIABLES (
     BTBG08A BTBG08B BTBG08C BTBG08D BTBG08E
     =
-    SJContent SJPurpose SJEnthus SJInspire SJProud
+    JContent JPurpose JEnthus JInspire JProud
     ).
 
 * G9: Teaching limitation.
@@ -205,8 +205,8 @@ RENAME VARIABLES (
     BTBG09A BTBG09B BTBG09C BTBG09D
     BTBG09E BTBG09F BTBG09G BTBG09H
     =
-    SLManyStd SLManyMat SLManyHr SLTimePrep
-    SLTimeAss SLMchPres SLChgCur SLManyAdm
+    LManyStd LManyMat LManyHr LTimePrep
+    LTimeAss LMchPres LChgCur LManyAdm
     ).
 
 * G10A: Number of student in the class.
@@ -217,7 +217,7 @@ MISSING VALUES
     BTBG10
         (-99).
 RENAME VARIABLES (
-    BTBG10 = SNStdCl
+    BTBG10 = NStdCl
     ).
 
 * G11: Number of students with language difficulties.
@@ -228,7 +228,7 @@ MISSING VALUES
     BTBG11
         (-99).
 RENAME VARIABLES (
-    BTBG11 = SNStdLang
+    BTBG11 = NStdLang
     ).
 
 * G12: Teaching practices.
@@ -248,8 +248,8 @@ MISSING VALUES
 RENAME VARIABLES (
     BTBG12A BTBG12B BTBG12C BTBG12D BTBG12E BTBG12F BTBG12G
     =
-    SPDalyLiv SPExpAns SPChlgEx SPClasDis
-    SPLnkKnow SPPrbSolv SPExpsIde
+    PDalyLiv PExpAns PChlgEx PClasDis
+    PLnkKnow PPrbSolv PExpsIde
     ).
 
 * G13: Students limitation.
@@ -272,8 +272,8 @@ RENAME VARIABLES (
     BTBG13A BTBG13B BTBG13C BTBG13D
     BTBG13E BTBG13F BTBG13G BTBG13H
     =
-    SLLckKng SLLckNut SLLckSlep SLabsent
-    SLDistStd SLUninStd SLMentImp SLDifUnLg
+    LLckKng LLckNut LLckSlep Labsent
+    LDistStd LUninStd LMentImp LDifUnLg
     ).
 
 * S14: Time spent on science instruction.
@@ -560,7 +560,7 @@ MISSING VALUES
     BTBGLSN
         (-99).
 RENAME VARIABLES (
-    BTBGLSN = SSCLLimit
+    BTBGLSN = SCLLimit
     ).
 
 * TIMSS scale: Safe and orderly school.
@@ -571,7 +571,7 @@ MISSING VALUES
     BTBGSOS
         (-99).
 RENAME VARIABLES (
-    BTBGSOS = SSCLSafe
+    BTBGSOS = SCLSafe
     ).
 
 * TIMSS scale: Teacher job satisfaction.
@@ -582,7 +582,7 @@ MISSING VALUES
     BTBGTJS
         (-99).
 RENAME VARIABLES (
-    BTBGTJS = SSCLJob
+    BTBGTJS = SCLJob
     ).
 
 * TIMSS scale: Teachers Emphasis on Science Investigation.
@@ -593,7 +593,7 @@ MISSING VALUES
     BTBSESI
         (-99).
 RENAME VARIABLES (
-    BTBSESI = SSCLExprm
+    BTBSESI = SCLExprm
     ).
 
 * TIMSS index: Safe and orderly school.
@@ -627,7 +627,7 @@ MISSING VALUES
     BTDGLSN
         (-99).
 RENAME VARIABLES (
-    BTDGLSN = SIDXLimit
+    BTDGLSN = IDXLimit
     ).
 
 * TIMSS index: Teaching limited by students not ready.
@@ -644,7 +644,7 @@ MISSING VALUES
     BTDGSOS
         (-99).
 RENAME VARIABLES (
-    BTDGSOS = SIDXSafe
+    BTDGSOS = IDXSafe
     ).
 
 * TIMSS index: Teacher job satisfaction.
@@ -661,7 +661,7 @@ MISSING VALUES
     BTDGTJS
         (-99).
 RENAME VARIABLES (
-    BTDGTJS = SIDXJob
+    BTDGTJS = IDXJob
     ).
 
 * TIMSS index: Teachers Emphis on Science Investigation.
@@ -677,7 +677,7 @@ MISSING VALUES
     BTDSESI
         (-99).
 RENAME VARIABLES (
-    BTDSESI = SIDXExprm
+    BTDSESI = IDXExprm
     ).
 
 * Percent of teachers majored in education and science.
@@ -696,58 +696,58 @@ MISSING VALUES
     BTDSMSE
         (-99).
 RENAME VARIABLES (
-    BTDSMSE = SSTchMjr
+    BTDSMSE = STchMjr
     ).
 
 * Percent of students taught science topics.
 RECODE
     BTDSBIO
-        ( 999.000000) (996.000000=-99) (SYSMIS=-99) (MISSING=-99).
+        (996.000000=-99) (999.000000=-99) (SYSMIS=-99) (MISSING=-99).
 MISSING VALUES
     BTDSBIO
         (-99).
 RENAME VARIABLES (
-    BTDSBIO = SPTpBio
+    BTDSBIO = PTpBio
     ).
 
 * Percent of students taught science topics.
 RECODE
     BTDSCHE
-        ( 999.000000) (996.000000=-99) (SYSMIS=-99) (MISSING=-99).
+        (996.000000=-99) (999.000000=-99) (SYSMIS=-99) (MISSING=-99).
 MISSING VALUES
     BTDSCHE
         (-99).
 RENAME VARIABLES (
-    BTDSCHE = SPTpChe
+    BTDSCHE = PTpChe
     ).
 
 * Percent of students taught science topics.
 RECODE
     BTDSPHY
-        ( 999.000000) (996.000000=-99) (SYSMIS=-99) (MISSING=-99).
+        (996.000000=-99) (999.000000=-99) (SYSMIS=-99) (MISSING=-99).
 MISSING VALUES
     BTDSPHY
         (-99).
 RENAME VARIABLES (
-    BTDSPHY = SPTpPht
+    BTDSPHY = PTpPht
     ).
 
 * Percent of students taught science topics.
 RECODE
     BTDSEAR
-        ( 999.000000) (996.000000=-99) (SYSMIS=-99) (MISSING=-99).
+        (996.000000=-99) (999.000000=-99) (SYSMIS=-99) (MISSING=-99).
 MISSING VALUES
     BTDSEAR
         (-99).
 RENAME VARIABLES (
-    BTDSEAR = SPTpEar
+    BTDSEAR = PTpEar
     ).
 
 * Run script.
 EXECUTE.
 
 * Update data set.
-*SAVE OUTFILE =
-    "D:\TIMSS_2019\4_TIMSS_2019_G8_clean\TIMSS_2019_G8_clean.sav".
+SAVE OUTFILE =
+    "D:\TIMSS_2019\5_TIMSS_2019_G8_S_clean\TIMSS_2019_G8_S_clean.sav".
 
 ***** End script *****

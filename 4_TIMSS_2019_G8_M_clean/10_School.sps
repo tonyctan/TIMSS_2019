@@ -14,13 +14,13 @@
 * Cycle: 2019
 * Questionnaire: School
 * Grade: Grade 8
-* Subject: Math and Science
+* Subject: Math
 
 ***** Begin script *****
 
 * Import data.
 GET FILE =
-    "D:\TIMSS_2019\4_TIMSS_2019_G8_clean\TIMSS_2019_G8_clean.sav".
+    "D:\TIMSS_2019\4_TIMSS_2019_G8_M_clean\TIMSS_2019_G8_M_clean.sav".
 
 **************************
 ** School variables **
@@ -244,8 +244,8 @@ RENAME VARIABLES (
     BCBG14A BCBG14B BCBG14C BCBG14D BCBG14E BCBG14F
     BCBG14G BCBG14H BCBG14I BCBG14J BCBG14K
     =
-    STchUnd STchSuc STchExp STchIns SParInv SParCom
-    SPaeExp SParSupp SStdWell SStdGoal SStdResp 
+    CSTchUnd CSTchSuc CSTchExp CSTchIns CSParInv CSParCom
+    CSPaeExp CSParSupp CSStdWell CSStdGoal CSStdResp 
     ).
 
 * 15: Math and science programs in school.
@@ -403,7 +403,7 @@ MISSING VALUES
     BCBGEAS
         (-99).
 RENAME VARIABLES (
-    BCBGEAS = SCLseas
+    BCBGEAS = CSCLseas
     ).
 
 * TIMSS construct: Instruction affected by math resource shortage.
@@ -449,7 +449,7 @@ MISSING VALUES
     BCDGEAS
         (-99).
 RENAME VARIABLES (
-    BCDGEAS = IDXseas
+    BCDGEAS = CIDXseas
     ).
 
 * TIMSS construct: Instruction affected by math resource shortage.
@@ -504,6 +504,6 @@ EXECUTE.
 
 * Update data set.
 SAVE OUTFILE =
-    "D:\TIMSS_2019\4_TIMSS_2019_G8_clean\TIMSS_2019_G8_clean.sav".
+    "D:\TIMSS_2019\4_TIMSS_2019_G8_M_clean\TIMSS_2019_G8_M_clean.sav".
 
 ***** End script *****

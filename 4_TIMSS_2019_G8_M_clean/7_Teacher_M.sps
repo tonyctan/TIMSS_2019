@@ -13,13 +13,13 @@
 * Cycle: 2019
 * Questionnaire: Teacher Math
 * Grade: Grade 8
-* Subject: Math and Science
+* Subject: Math
 
 ***** Begin script *****
 
 * Import data.
 GET FILE =
-    "D:\TIMSS_2019\4_TIMSS_2019_G8_clean\TIMSS_2019_G8_clean.sav".
+    "D:\TIMSS_2019\4_TIMSS_2019_G8_M_clean\TIMSS_2019_G8_M_clean.sav".
 
 **************************
 ** Teacher variables **
@@ -33,7 +33,7 @@ MISSING VALUES
     BTBG01
         (-99).
 RENAME VARIABLES (
-    BTBG01 = MYearTeach
+    BTBG01 = YearTeach
     ).
 
 * G2: Teacher gender.
@@ -49,7 +49,7 @@ MISSING VALUES
     BTBG02
         (-99).
 RENAME VARIABLES (
-    BTBG02 = MTchMale
+    BTBG02 = TchMale
     ).
 
 * G3: Teacher age.
@@ -69,7 +69,7 @@ MISSING VALUES
     BTBG03
         (-99).
 RENAME VARIABLES (
-    BTBG03 = MAgeTeach
+    BTBG03 = AgeTeach
     ).
 
 * G4: Teacher level of education.
@@ -90,7 +90,7 @@ MISSING VALUES
     BTBG04
         (-99).
 RENAME VARIABLES (
-    BTBG04 = MEduLevel
+    BTBG04 = EduLevel
     ).
 
 * G5: Teacher major area of study.
@@ -112,8 +112,8 @@ RENAME VARIABLES (
     BTBG05A BTBG05B BTBG05C BTBG05D BTBG05E
     BTBG05F BTBG05G BTBG05H BTBG05I
     =       
-    MMajMath MMajBio MMajPhy MMajChe MMajEarth
-    MMajEduM MMajEduS MMajEduG MMajOther
+    MajMath MajBio MajPhy MajChe MajEarth
+    MajEduM MajEduS MajEduG MajOther
     ).
 
 * G6: School emphasis on academic success (SEAS).
@@ -163,8 +163,8 @@ RENAME VARIABLES (
     BTBG07A BTBG07B BTBG07C BTBG07D
     BTBG07E BTBG07F BTBG07G BTBG07H
     =
-    MOSafeNgh MOFeelSaf MOSecPol MOStdBhv
-    MOStdRes MOResPro MOClrRul MORulEnf
+    OSafeNgh OFeelSaf OSecPol OStdBhv
+    OStdRes OResPro OClrRul ORulEnf
     ).
 
 * G8: Teacher job satisfaction.
@@ -184,7 +184,7 @@ MISSING VALUES
 RENAME VARIABLES (
     BTBG08A BTBG08B BTBG08C BTBG08D BTBG08E
     =
-    MJContent MJPurpose MJEnthus MJInspire MJProud
+    JContent JPurpose JEnthus JInspire JProud
     ).
 
 * G9: Teaching limitation.
@@ -208,8 +208,8 @@ RENAME VARIABLES (
     BTBG09A BTBG09B BTBG09C BTBG09D
     BTBG09E BTBG09F BTBG09G BTBG09H
     =
-    MLManyStd MLManyMat MLManyHr MLTimePrep
-    MLTimeAss MLMchPres MLChgCur MLManyAdm
+    LManyStd LManyMat LManyHr LTimePrep
+    LTimeAss LMchPres LChgCur LManyAdm
     ).
 
 * G10A: Number of student in the class.
@@ -220,7 +220,7 @@ MISSING VALUES
     BTBG10
         (-99).
 RENAME VARIABLES (
-    BTBG10 = MNStdCl
+    BTBG10 = NStdCl
     ).
 
 * G11: Number of students with language difficulties.
@@ -231,7 +231,7 @@ MISSING VALUES
     BTBG11
         (-99).
 RENAME VARIABLES (
-    BTBG11 = MNStdLang
+    BTBG11 = NStdLang
     ).
 
 * G12: Teaching practices.
@@ -251,7 +251,7 @@ MISSING VALUES
 RENAME VARIABLES (
     BTBG12A BTBG12B BTBG12C BTBG12D BTBG12E BTBG12F BTBG12G
     =
-    MPDalyLiv MPExpAns MPChlgEx MPClasDis MPLnkKnow MPPrbSolv MPExpsIde
+    PDalyLiv PExpAns PChlgEx PClasDis PLnkKnow PPrbSolv PExpsIde
     ).
 
 * G13: Students limitation.
@@ -270,7 +270,7 @@ MISSING VALUES
 RENAME VARIABLES (
     BTBG13A BTBG13B BTBG13C BTBG13D BTBG13E BTBG13F BTBG13G BTBG13H
     =
-    MLLckKng MLLckNut MLLckSlep MLabsent MLDistStd MLUninStd MLMentImp MLDifUnLg
+    LLckKng LLckNut LLckSlep Labsent LDistStd LUninStd LMentImp LDifUnLg
     ).
 
 * M14: Time spent on math instruction.
@@ -281,7 +281,7 @@ MISSING VALUES
     BTBM14
         (-99).
 RENAME VARIABLES (
-    BTBM14 = MMathTime
+    BTBM14 = MathTime
     ).
 
 * M15: Math teaching practices.
@@ -305,8 +305,8 @@ RENAME VARIABLES (
     BTBM15A BTBM15B BTBM15C BTBM15D
     BTBM15E BTBM15F BTBM15G BTBM15H
     =
-    MMTExpln MMTSolve MMTMemrz MMTPract
-    MMTApply MMTWork MMTMixAb MMTSameAb
+    MTExpln MTSolve MTMemrz MTPract
+    MTApply MTWork MTMixAb MTSameAb
     ).
     
 * M16: Math teaching and access to calculator.
@@ -323,7 +323,7 @@ MISSING VALUES
     BTBM16
         (-99).
 RENAME VARIABLES (
-    BTBM16 = MMUseCal
+    BTBM16 = MUseCal
     ).
 
 * M17: Mathteaching and access to computer.
@@ -341,7 +341,7 @@ MISSING VALUES
 RENAME VARIABLES (
     BTBM17A BTBM17BA BTBM17BB BTBM17BC
     =
-    MMPCAva MMPCStd MMPCClas MMPCSch
+    MPCAva MPCStd MPCClas MPCSch
     ).
 
 
@@ -362,7 +362,7 @@ MISSING VALUES
 RENAME VARIABLES (
     BTBM17CA BTBM17CB BTBM17CC BTBM17CD
     =
-    MMLpcClas MMLpcLow MMLpcHigh MMLpcNeed
+    MLpcClas MLpcLow MLpcHigh MLpcNeed
     ).
 
 * M18: Mathematics topics taught to use the TIMSS class.
@@ -393,10 +393,10 @@ RENAME VARIABLES (
     BTBM18CC BTBM18CD BTBM18CE BTBM18CF BTBM18DA BTBM18DB
     BTBM18DC BTBM18DD BTBM18DE BTBM18DF
     =
-    MMTopNum MMTopFrac MMTopPro MMTopSimp MMTopEqu MMTopInq
-    MMTopSim MMTopFRep MMTopFPro MMTopNrc MMTopGeo MMTopPer
-    MMTopPhy MMTopTrn MMTopFig MMTopDim MMTopData MMTopCol
-    MMTopRep MMTopSts MMTopPrb MMTopCom
+    MTopNum MTopFrac MTopPro MTopSimp MTopEqu MTopInq
+    MTopSim MTopFRep MTopFPro MTopNrc MTopGeo MTopPer
+    MTopPhy MTopTrn MTopFig MTopDim MTopData MTopCol
+    MTopRep MTopSts MTopPrb MTopCom
     ).
 
 * M19: Time for math homework.
@@ -415,7 +415,7 @@ MISSING VALUES
     BTBM19A
         (-99).
 RENAME VARIABLES (
-    BTBM19A = MMHomeW 
+    BTBM19A = MHomeW 
     ).
 
 * M19B: Time for math homework.
@@ -433,7 +433,7 @@ MISSING VALUES
     BTBM19B
         (-99).
 RENAME VARIABLES (
-    BTBM19B = MMTimeHW
+    BTBM19B = MTimeHW
     ).
 
 * M19C: Assessing mathematics homework.
@@ -452,7 +452,7 @@ MISSING VALUES
 RENAME VARIABLES (
     BTBM19CA BTBM19CB BTBM19CC BTBM19CD BTBM19CE
     =
-    MMHWCor MMHWOwn MMHWDis MMHWMntr MMHWGrd
+    MHWCor MHWOwn MHWDis MHWMntr MHWGrd
     ).
 
 * M20: Math assessment strategies.
@@ -471,7 +471,7 @@ MISSING VALUES
 RENAME VARIABLES (
     BTBM20A BTBM20B BTBM20C BTBM20D BTBM20E
     =
-    MMAsObs MMAsAsk MMAsShort MMAsLgTest MMAsLgPro
+    MAsObs MAsAsk MAsShort MAsLgTest MAsLgPro
     ).
 
 * M21: Math test on computer.
@@ -490,7 +490,7 @@ MISSING VALUES
     BTBM21
         (-99).
 RENAME VARIABLES (
-    BTBM21 = MMTestPC
+    BTBM21 = MTestPC
     ).
 
 * M22: PD to teach mathematics: Past experience (A) and future needs (B).
@@ -512,8 +512,8 @@ RENAME VARIABLES (
     BTBM22AA BTBM22BA BTBM22AB BTBM22BB BTBM22AC BTBM22BC BTBM22AD
     BTBM22BD BTBM22AE BTBM22BE BTBM22AF BTBM22BF BTBM22AG BTBM22BG
     =
-    MMPDPCont MMPDFCont MMPDPPed MMPDFPed MMPDPCur MMPDFCur MMPDPTech
-    MMPDFTech MMPDPProb MMPDFProb MMPDPAss MMPDFAss MMPDPNeed MMPDFNeed
+    MPDPCont MPDFCont MPDPPed MPDFPed MPDPCur MPDFCur MPDPTech
+    MPDFTech MPDPProb MPDFProb MPDPAss MPDFAss MPDPNeed MPDFNeed
     ).
 
 * M23: Number of PD hours in mathematics.
@@ -532,7 +532,7 @@ MISSING VALUES
     BTBM23
         (-99).
 RENAME VARIABLES (
-    BTBM23 = MMPDHour
+    BTBM23 = MPDHour
     ).
 
 
@@ -575,7 +575,7 @@ MISSING VALUES
     BTBGLSN
         (-99).
 RENAME VARIABLES (
-    BTBGLSN = MSCLLimit
+    BTBGLSN = SCLLimit
     ).
 
 * TIMSS scale: Safe and orderly school.
@@ -586,7 +586,7 @@ MISSING VALUES
     BTBGSOS
         (-99).
 RENAME VARIABLES (
-    BTBGSOS = MSCLSafe
+    BTBGSOS = SCLSafe
     ).
 
 * TIMSS scale: Teacher job satisfaction.
@@ -597,18 +597,7 @@ MISSING VALUES
     BTBGTJS
         (-99).
 RENAME VARIABLES (
-    BTBGTJS = MSCLJob
-    ).
-
-* TIMSS scale: Teachers Emphasis on Science Investigation.
-RECODE
-    BTBSESI
-        (999999=-99) (SYSMIS=-99) (MISSING=-99).
-MISSING VALUES
-    BTBSESI
-        (-99).
-RENAME VARIABLES (
-    BTBSESI = MSCLExprm
+    BTBGTJS = SCLJob
     ).
 
 * TIMSS index: SEAS.
@@ -642,7 +631,7 @@ MISSING VALUES
     BTDGLSN
         (-99).
 RENAME VARIABLES (
-    BTDGLSN = MIDXLimit
+    BTDGLSN = IDXLimit
     ).
 
 * TIMSS index: Safe and orderly school.
@@ -659,7 +648,7 @@ MISSING VALUES
     BTDGSOS
         (-99).
 RENAME VARIABLES (
-    BTDGSOS = MIDXSafe
+    BTDGSOS = IDXSafe
     ).
 
 * TIMSS index: Teacher job satisfaction.
@@ -676,7 +665,7 @@ MISSING VALUES
     BTDGTJS
         (-99).
 RENAME VARIABLES (
-    BTDGTJS = MIDXJob
+    BTDGTJS = IDXJob
     ).
 
 * Percent of teachers majored in education and math.
@@ -695,7 +684,7 @@ MISSING VALUES
     BTDMMME
         (-99).
 RENAME VARIABLES (
-    BTDMMME = MMTchMjr
+    BTDMMME = MTchMjr
     ).
 
 * Percent of students taught math topics.
@@ -706,7 +695,7 @@ MISSING VALUES
     BTDMNUM
         (-99).
 RENAME VARIABLES (
-    BTDMNUM = MPTpNumb
+    BTDMNUM = PTpNumb
     ).
 
 * Percent of students taught math topics.
@@ -717,7 +706,7 @@ MISSING VALUES
     BTDMALG
         (-99).
 RENAME VARIABLES (
-    BTDMALG = MPTpAlg
+    BTDMALG = PTpAlg
     ).
 
 * Percent of students taught math topics.
@@ -728,7 +717,7 @@ MISSING VALUES
     BTDMGEO
         (-99).
 RENAME VARIABLES (
-    BTDMGEO = MPTpGeo
+    BTDMGEO = PTpGeo
     ).
 
 * Percent of students taught math topics.
@@ -739,7 +728,7 @@ MISSING VALUES
     BTDMDAT
         (-99).
 RENAME VARIABLES (
-    BTDMDAT = MPTpData
+    BTDMDAT = PTpData
     ).
 
 * Run script.
@@ -747,7 +736,6 @@ EXECUTE.
 
 * Update data set.
 SAVE OUTFILE =
-    "D:\TIMSS_2019\4_TIMSS_2019_G8_clean\TIMSS_2019_G8_clean.sav".
+    "D:\TIMSS_2019\4_TIMSS_2019_G8_M_clean\TIMSS_2019_G8_M_clean.sav".
 
 ***** End script *****
-
