@@ -154,7 +154,7 @@ MISSING VALUES
         (-99).
 RENAME VARIABLES (
     ACBG08A ACBG08B ACBG09 ACBG10A
-    = 
+    =
     SciLab AssLab NettLMS Library
     ).
 
@@ -183,7 +183,7 @@ MISSING VALUES
         (-99).
 RENAME VARIABLES (
     ACBG11 ACBG12
-    = 
+    =
     LibClass DgtlLearn
     ).
 
@@ -191,7 +191,7 @@ RENAME VARIABLES (
 RECODE
     ACBG13AA ACBG13AB ACBG13AC ACBG13AD ACBG13AE ACBG13AF
     ACBG13AG ACBG13AH ACBG13AI ACBG13BA ACBG13BB ACBG13BC
-    ACBG13BD ACBG13BE ACBG13CA ACBG13CB ACBG13CC ACBG13CD 
+    ACBG13BD ACBG13BE ACBG13CA ACBG13CB ACBG13CC ACBG13CD
         (1=0) (2=1) (3=2) (4=3)
         (9=-99) (SYSMIS=-99) (MISSING=-99).
 VALUE LABELS
@@ -214,7 +214,7 @@ RENAME VARIABLES (
     =
     SrtMatrl SrtSuply SrtBuild SrtHeat SrtSpace SrtTech
     SrtAudio SrtComp SrtDisab SrtMTch SrtMComp SrtMLib
-    SrtMCal SrtMEqu SrtSTch SrtSComp SrtSLib SrtSEqu 
+    SrtMCal SrtMEqu SrtSTch SrtSComp SrtSLib SrtSEqu
     ).
 
 * 14: School emphasis on academic success.
@@ -251,26 +251,26 @@ RENAME VARIABLES (
 * 15: School discipline and safety.
 RECODE
     ACBG15A ACBG15B ACBG15C ACBG15D ACBG15E
-    ACBG15F ACBG15G ACBG15H ACBG15I ACBG15J 
+    ACBG15F ACBG15G ACBG15H ACBG15I ACBG15J
         (1=0) (2=1) (3=2) (4=3)
         (9=-99) (SYSMIS=-99) (MISSING=-99).
 VALUE LABELS
     ACBG15A ACBG15B ACBG15C ACBG15D ACBG15E
-    ACBG15F ACBG15G ACBG15H ACBG15I ACBG15J 
+    ACBG15F ACBG15G ACBG15H ACBG15I ACBG15J
         0 'Not a problem'
         1 'Minor problem'
         2 'Moderate problem'
         3 'Serious problem'.
 MISSING VALUES
     ACBG15A ACBG15B ACBG15C ACBG15D ACBG15E
-    ACBG15F ACBG15G ACBG15H ACBG15I ACBG15J 
+    ACBG15F ACBG15G ACBG15H ACBG15I ACBG15J
         (-99).
 RENAME VARIABLES (
     ACBG15A ACBG15B ACBG15C ACBG15D ACBG15E
     ACBG15F ACBG15G ACBG15H ACBG15I ACBG15J
     =
     SDLate SDAbsnt SDDistrb SDCheat SDProfnt
-    SDVandl SDTheft SDIntim SDFight SDAbuse 
+    SDVandl SDTheft SDIntim SDFight SDAbuse
     ).
 
 * 16: Teacher problem.
@@ -290,13 +290,13 @@ MISSING VALUES
 RENAME VARIABLES (
     ACBG16A ACBG16B
     =
-    TchLate TchAbsent 
+    TchLate TchAbsent
     ).
 
 * 17: School readiness.
 RECODE
     ACBG17A ACBG17B ACBG17C ACBG17D ACBG17E ACBG17F
-    ACBG17G ACBG17H ACBG17I ACBG17J ACBG17K ACBG17L 
+    ACBG17G ACBG17H ACBG17I ACBG17J ACBG17K ACBG17L
         (1=0) (2=1) (3=2) (4=3)
         (9=-99) (SYSMIS=-99) (MISSING=-99).
 VALUE LABELS
@@ -315,7 +315,7 @@ RENAME VARIABLES (
     ACBG17G ACBG17H ACBG17I ACBG17J ACBG17K ACBG17L
     =
     SRLetter SRWord SRSenten SRWrite SRName SRWrtWo
-    SRCount SRNumber SRNumHIg SRWrtNum SRAdditn SRSubtr 
+    SRCount SRNumber SRNumHIg SRWrtNum SRAdditn SRSubtr
     ).
 
 * 18,19: Principal years of experience.
@@ -326,7 +326,7 @@ MISSING VALUES
     ACBG18 ACBG19
         (-99).
 RENAME VARIABLES (
-    ACBG18 ACBG19 
+    ACBG18 ACBG19
     =
     PrcplYear PrYearSc
     ).
@@ -338,10 +338,10 @@ RECODE
         (9=-99) (SYSMIS=-99) (MISSING=-99).
 VALUE LABELS
     ACBG20
-        0 'Did not complete <Bachelor’s or equivalent level—ISCED Level 6>'
-        1 '<Bachelor’s or equivalent level—ISCED Level 6>'
-        2 '<Master’s or equivalent level—ISCED Level 7>'
-        3 '<Doctor or equivalent level—ISCED Level 8>'.
+        0 'Did not complete <Bachelor’s or equivalent level--ISCED Level 6>'
+        1 '<Bachelor’s or equivalent level--ISCED Level 6>'
+        2 '<Master’s or equivalent level--ISCED Level 7>'
+        3 '<Doctor or equivalent level--ISCED Level 8>'.
 MISSING VALUES
     ACBG20
         (-99).
@@ -363,7 +363,7 @@ MISSING VALUES
         (-99).
 RENAME VARIABLES (
     ACBG21A ACBG21B ACBG21C
-    = 
+    =
     PrLdrCer PrLdrMas PrLdrDoc
     ).
 
@@ -540,7 +540,7 @@ VALUE LABELS
 RENAME VARIABLES (
     ACDGSBC = SchSES
     ).
-    
+
 * Total instructional hours per year.
 RECODE
     ACDGTIHY

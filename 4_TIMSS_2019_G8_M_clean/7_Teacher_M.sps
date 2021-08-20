@@ -55,10 +55,10 @@ RENAME VARIABLES (
 * G3: Teacher age.
 RECODE
     BTBG03
-         (1=0) (2=1) (3=2) (4=3) (5=4) (6=5) 
+         (1=0) (2=1) (3=2) (4=3) (5=4) (6=5)
          (9=-99) (SYSMIS=-99) (MISSING=-99).
 VALUE LABELS
-    BTBG03 
+    BTBG03
        0 'Under 25'
        1 '25-29'
        2 '30-39'
@@ -75,10 +75,10 @@ RENAME VARIABLES (
 * G4: Teacher level of education.
 RECODE
     BTBG04
-        (1=0)  (2=1) (3=2) (4=3) (5=4) (6=5) (7=6) 
+        (1=0)  (2=1) (3=2) (4=3) (5=4) (6=5) (7=6)
         (99=-99) (SYSMIS=-99) (MISSING=-99).
 VALUE LABELS
-   BTBG04 
+   BTBG04
        0 'Did not completed upper secondary'
        1 'Upper secondary'
        2 'Post-secondary or non-tertiary'
@@ -98,20 +98,20 @@ RECODE
     BTBG05A BTBG05B BTBG05C BTBG05D BTBG05E
     BTBG05F BTBG05G BTBG05H BTBG05I
         (1=1) (2=0)
-        (6=-99) (9=-99) (SYSMIS=-99) (MISSING=-99). 
+        (6=-99) (9=-99) (SYSMIS=-99) (MISSING=-99).
 VALUE LABELS
     BTBG05A BTBG05B BTBG05C BTBG05D BTBG05E
     BTBG05F BTBG05G BTBG05H BTBG05I
         0 'No'
         1 'Yes'.
-MISSING VALUES 
+MISSING VALUES
     BTBG05A BTBG05B BTBG05C BTBG05D BTBG05E
     BTBG05F BTBG05G BTBG05H BTBG05I
         (-99).
 RENAME VARIABLES (
     BTBG05A BTBG05B BTBG05C BTBG05D BTBG05E
     BTBG05F BTBG05G BTBG05H BTBG05I
-    =       
+    =
     MajMath MajBio MajPhy MajChe MajEarth
     MajEduM MajEduS MajEduG MajOther
     ).
@@ -121,10 +121,10 @@ RECODE
     BTBG06A BTBG06B BTBG06C BTBG06D BTBG06E BTBG06F
     BTBG06G BTBG06H BTBG06I BTBG06J BTBG06K BTBG06L
         (1=4) (2=3) (3=2) (4=1) (5=0)
-        (9=-99) (SYSMIS=-99) (MISSING=-99). 
+        (9=-99) (SYSMIS=-99) (MISSING=-99).
 VALUE LABELS
     BTBG06A BTBG06B BTBG06C BTBG06D BTBG06E BTBG06F
-    BTBG06G BTBG06H BTBG06I BTBG06J BTBG06K BTBG06L 
+    BTBG06G BTBG06H BTBG06I BTBG06J BTBG06K BTBG06L
         0 'Very low'
         1 'Low'
         2 'Medium'
@@ -141,7 +141,7 @@ RENAME VARIABLES (
     MSTchUnd MSTchSuc MSTchExp MSTchAbi MSParInv MSParCom
     MSparExp MSParSup MSStudDes MSRchGoal MSResPeer MScollab
     ).
-    
+
 * G7: Safety and orderly school.
 RECODE
     BTBG07A BTBG07B BTBG07C BTBG07D
@@ -287,7 +287,7 @@ RENAME VARIABLES (
 * M15: Math teaching practices.
 RECODE
     BTBM15A BTBM15B BTBM15C BTBM15D
-    BTBM15E BTBM15F BTBM15G BTBM15H 
+    BTBM15E BTBM15F BTBM15G BTBM15H
         (1=3) (2=2) (3=1) (4=0)
         (9=-99) (SYSMIS=-99) (MISSING=-99).
 VALUE LABELS
@@ -308,7 +308,7 @@ RENAME VARIABLES (
     MTExpln MTSolve MTMemrz MTPract
     MTApply MTWork MTMixAb MTSameAb
     ).
-    
+
 * M16: Math teaching and access to calculator.
 RECODE
     BTBM16
@@ -415,7 +415,7 @@ MISSING VALUES
     BTBM19A
         (-99).
 RENAME VARIABLES (
-    BTBM19A = MHomeW 
+    BTBM19A = MHomeW
     ).
 
 * M19B: Time for math homework.

@@ -59,10 +59,10 @@ RENAME VARIABLES (
 * G4: SES: Number of books at home.
 RECODE
     ASBG04
-         (1=0) (2=1) (3=2) (4=3) (5=4) 
+         (1=0) (2=1) (3=2) (4=3) (5=4)
          (9=-99) (SYSMIS=-99) (MISSING=-99).
 VALUE LABELS
-    ASBG04 
+    ASBG04
        0 'None or very few (0--10 books)'
        1 'Enough to fill one shelf (11--25 books)'
        2 'Enough to fill one bookcase (26--100 books)'
@@ -79,24 +79,24 @@ RENAME VARIABLES (
 RECODE
     ASBG05A ASBG05B ASBG05C ASBG05D ASBG05E ASBG05F ASBG05G ASBG05H ASBG05I
         (1=1) (2=0)
-        (9=-99) (SYSMIS=-99) (MISSING=-99). 
+        (9=-99) (SYSMIS=-99) (MISSING=-99).
 VALUE LABELS
     ASBG05A ASBG05B ASBG05C ASBG05D ASBG05E ASBG05F ASBG05G ASBG05H ASBG05I
         0 'No'
         1 'Yes'.
-MISSING VALUES 
+MISSING VALUES
     ASBG05A ASBG05B ASBG05C ASBG05D ASBG05E ASBG05F ASBG05G ASBG05H ASBG05I
         (-99).
 RENAME VARIABLES (
     ASBG05A ASBG05B ASBG05C ASBG05D ASBG05E ASBG05F ASBG05G ASBG05H ASBG05I
-    =       
+    =
     SESComp SESDesk SESRoom SESInter SESPhone SESCnt1 SESCnt2 SESCnt3 SESCnt4
     ).
-    
+
 * G6: Parents' country of birth.
 RECODE
     ASBG06A ASBG06B
-        (1=0) (2=1) (3=2) (4=3)  
+        (1=0) (2=1) (3=2) (4=3)
         (9=-99) (SYSMIS=-99) (MISSING=-99).
 VALUE LABELS
     ASBG06A ASBG06B
@@ -242,7 +242,7 @@ MISSING VALUES
 RENAME VARIABLES (
     ASBM02A ASBM02B ASBM02C ASBM02D ASBM02E ASBM02F ASBM02G ASBM02H ASBM02I
     =
-    MEnjoy MNotStdy MBorng MIntrst MLike MWrkNum MProblem MLokFrwd MFavSub 
+    MEnjoy MNotStdy MBorng MIntrst MLike MWrkNum MProblem MLokFrwd MFavSub
     ).
 
 * MS3: Math teaching: Teacher support.
@@ -264,7 +264,7 @@ RENAME VARIABLES (
     =
     MTcExp MTcEasy MTcClear MTcGood MTcVary MTcExpA
     ).
-    
+
 * MS4: Math teaching: Classroom management.
 RECODE
     ASBM04A ASBM04B ASBM04C ASBM04D ASBM04E ASBM04F

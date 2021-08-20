@@ -1,5 +1,4 @@
 ﻿* Encoding: UTF-8.
-* Encoding: .
 
 **** ADMIN INFO *****
 * Date: 23 July 2021
@@ -158,7 +157,7 @@ MISSING VALUES
         (-99).
 RENAME VARIABLES (
     BCBG08A BCBG08B BCBG09 BCBG10A
-    = 
+    =
     SciLab AssLab NettLMS Library
     ).
 
@@ -188,7 +187,7 @@ MISSING VALUES
         (-99).
 RENAME VARIABLES (
     BCBG11 BCBG12
-    = 
+    =
     LibClass DgtlLearn
     ).
 
@@ -219,18 +218,18 @@ RENAME VARIABLES (
     =
     SrtMatrl SrtSuply SrtBuild SrtHeat SrtSpace SrtTech SrtAudio SrtComp SrtDisab
     SrtMTch SrtMComp SrtMLib SrtMCal SrtMEqu
-    SrtSTch SrtSComp SrtSLib SrtSCal SrtSEqu 
+    SrtSTch SrtSComp SrtSLib SrtSCal SrtSEqu
     ).
 
 * 14: School emphasis on academic success.
 RECODE
     BCBG14A BCBG14B BCBG14C BCBG14D BCBG14E BCBG14F
-    BCBG14G BCBG14H BCBG14I BCBG14J BCBG14K 
+    BCBG14G BCBG14H BCBG14I BCBG14J BCBG14K
         (1=4) (2=3) (3=2) (4=1) (5=0)
         (9=-99) (SYSMIS=-99) (MISSING=-99).
 VALUE LABELS
     BCBG14A BCBG14B BCBG14C BCBG14D BCBG14E BCBG14F
-    BCBG14G BCBG14H BCBG14I BCBG14J BCBG14K 
+    BCBG14G BCBG14H BCBG14I BCBG14J BCBG14K
         0 'Very low'
         1 'Low'
         2 'Medium'
@@ -245,29 +244,29 @@ RENAME VARIABLES (
     BCBG14G BCBG14H BCBG14I BCBG14J BCBG14K
     =
     CSTchUnd CSTchSuc CSTchExp CSTchIns CSParInv CSParCom
-    CSPaeExp CSParSupp CSStdWell CSStdGoal CSStdResp 
+    CSPaeExp CSParSupp CSStdWell CSStdGoal CSStdResp
     ).
 
 * 15: Math and science programs in school.
 RECODE
     BCBG15A BCBG15B BCBG15C BCBG15D
-    BCBG15E BCBG15F BCBG15G BCBG15H 
+    BCBG15E BCBG15F BCBG15G BCBG15H
         (1=3) (2=2) (3=1) (4=0)
         (9=-99) (SYSMIS=-99) (MISSING=-99).
 VALUE LABELS
     BCBG15A BCBG15B BCBG15C BCBG15D
-    BCBG15E BCBG15F BCBG15G BCBG15H 
+    BCBG15E BCBG15F BCBG15G BCBG15H
         0 'Disagree a lot'
         1 'Disagree a little'
         2 'Agree a little'
         3 'Agree a lot'.
 MISSING VALUES
     BCBG15A BCBG15B BCBG15C BCBG15D
-    BCBG15E BCBG15F BCBG15G BCBG15H 
+    BCBG15E BCBG15F BCBG15G BCBG15H
         (-99).
 RENAME VARIABLES (
     BCBG15A BCBG15B BCBG15C BCBG15D
-    BCBG15E BCBG15F BCBG15G BCBG15H 
+    BCBG15E BCBG15F BCBG15G BCBG15H
     =
     PrgInfo PrgIntrs PrgPD PrgXtLes
     PrgSpcAc PrgSpcGo PrgEncgSt PrgXtTim
@@ -295,7 +294,7 @@ RENAME VARIABLES (
     BCBG16F BCBG16G BCBG16H BCBG16I BCBG16J BCBG16K
     =
     SDLate SDAbsnt SDDistrb SDCheat SDProfnt SDVandl
-    SDTheft SDIntim SDInjuSt SDAbuse SDInjuTc 
+    SDTheft SDIntim SDInjuSt SDAbuse SDInjuTc
     ).
 
 * 17: Teacher problem.
@@ -315,7 +314,7 @@ MISSING VALUES
 RENAME VARIABLES (
     BCBG17A BCBG17B
     =
-    TchLate TchAbsent 
+    TchLate TchAbsent
     ).
 
 * 18 and 19: Principal years of experience.
@@ -329,7 +328,7 @@ MISSING VALUES
 RENAME VARIABLES (
     BCBG18 BCBG19
     =
-    PrcplYear PrYearSc 
+    PrcplYear PrYearSc
     ).
 
 * 20: Principal highest level of education.
@@ -339,15 +338,15 @@ RECODE
         (9=-99) (SYSMIS=-99) (MISSING=-99).
 VALUE LABELS
     BCBG20
-        0 'Did not complete <Bachelor’s or equivalent level—ISCED Level 6>'
-        1 '<Bachelor’s or equivalent level—ISCED Level 6>'
-        2 '<Master’s or equivalent level—ISCED Level 7>'
-        3 '<Doctor or equivalent level—ISCED Level 8>'.
+        0 'Did not complete <Bachelor’s or equivalent level--ISCED Level 6>'
+        1 '<Bachelor’s or equivalent level--ISCED Level 6>'
+        2 '<Master’s or equivalent level--ISCED Level 7>'
+        3 '<Doctor or equivalent level--ISCED Level 8>'.
 MISSING VALUES
     BCBG20
         (-99).
 RENAME VARIABLES (
-    BCBG20 = PrEdu 
+    BCBG20 = PrEdu
     ).
 
 * 21: Principal qualification in educational leadership.
@@ -364,7 +363,7 @@ MISSING VALUES
         (-99).
 RENAME VARIABLES (
     BCBG21A BCBG21B BCBG21C
-    = 
+    =
     PrLdrCer PrLdrMas PrLdrDoc
     ).
 
@@ -375,7 +374,7 @@ RECODE
 MISSING VALUES
     ITLANG_C
         (-99).
- 
+
 * Locale ID of school questionnaire.
 RECODE
     LCID_C

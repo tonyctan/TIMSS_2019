@@ -59,10 +59,10 @@ RENAME VARIABLES (
 * G4: SES: Number of books at home.
 RECODE
     BSBG04
-        (1=0) (2=1) (3=2) (4=3) (5=4) 
+        (1=0) (2=1) (3=2) (4=3) (5=4)
         (9=-99) (SYSMIS=-99) (MISSING=-99).
 VALUE LABELS
-    BSBG04 
+    BSBG04
         0 'None or very few (0--10 books)'
         1 'Enough to fill one shelf (11--25 books)'
         2 'Enough to fill one bookcase (26--100 books)'
@@ -79,17 +79,17 @@ RENAME VARIABLES (
 RECODE
     BSBG05A BSBG05B BSBG05C BSBG05D BSBG05E BSBG05F BSBG05G BSBG05H BSBG05I
         (1=1) (2=0)
-        (9=-99) (SYSMIS=-99) (MISSING=-99). 
+        (9=-99) (SYSMIS=-99) (MISSING=-99).
 VALUE LABELS
     BSBG05A BSBG05B BSBG05C BSBG05D BSBG05E BSBG05F BSBG05G BSBG05H BSBG05I
         0 'No'
         1 'Yes'.
-MISSING VALUES 
+MISSING VALUES
     BSBG05A BSBG05B BSBG05C BSBG05D BSBG05E BSBG05F BSBG05G BSBG05H BSBG05I
         (-99).
 RENAME VARIABLES (
     BSBG05A BSBG05B BSBG05C BSBG05D BSBG05E BSBG05F BSBG05G BSBG05H BSBG05I
-    =       
+    =
     SESComp SESDesk SESRoom SESInter SESPhone SESCnt1 SESCnt2 SESCnt3 SESCnt4
     ).
 
@@ -100,13 +100,13 @@ RECODE
         (8=-99) (9=-99) (SYSMIS=-99) (MISSING=-99).
 VALUE LABELS
     BSBG06A BSBG06B
-        0 'Some <Primary education—ISCED Level 1 or Lower secondary education—ISCED Level 2> or did not go to school'
-        1 '<Lower secondary education—ISCED Level 2>'
-        2 '<Upper secondary education—ISCED Level 3>'
-        3 '<Post-secondary, non-tertiary education—ISCED Level 4>'
-        4 '<Short-cycle tertiary education—ISCED Level 5>'
-        5 '<Bachelor’s or equivalent level—ISCED Level 6>'
-        6 '<Postgraduate degree: Master’s—ISCED Level 7 or Doctor —ISCED Level 8>'
+        0 'Some <Primary education--ISCED Level 1 or Lower secondary education--ISCED Level 2> or did not go to school'
+        1 '<Lower secondary education--ISCED Level 2>'
+        2 '<Upper secondary education--ISCED Level 3>'
+        3 '<Post-secondary, non-tertiary education--ISCED Level 4>'
+        4 '<Short-cycle tertiary education--ISCED Level 5>'
+        5 '<Bachelor’s or equivalent level--ISCED Level 6>'
+        6 '<Postgraduate degree: Master’s--ISCED Level 7 or Doctor--ISCED Level 8>'
         7 'I do not know'.
 MISSING VALUES
     BSBG06A BSBG06B
@@ -129,7 +129,7 @@ VALUE LABELS
         2 'Finish <Post-secondary, non-tertiary education--ISCED Level 4>'
         3 'Finish <Short-cycle tertiary education--ISCED Level 5>'
         4 'Finish <Bachelors or equivalent level--ISCED Level 6>'
-        5 'Finish <Postgraduate degree: Masters--ISCED Level 7 or Doctor —ISCED Level 8>'.
+        5 'Finish <Postgraduate degree: Masters--ISCED Level 7 or Doctor--ISCED Level 8>'.
 MISSING VALUES
     BSBG07
         (-99).
@@ -176,7 +176,7 @@ RENAME VARIABLES (
 * G9B: Student's age entering the country.
 RECODE
     BSBG09B
-        (1=2) (2=1) (3=0) 
+        (1=2) (2=1) (3=0)
         (6=-99)(9=-99) (SYSMIS=-99) (MISSING=-99).
 VALUE LABELS
     BSBG09B
@@ -235,7 +235,7 @@ RECODE
         (1=0) (2=1)
         (9=-99) (SYSMIS=-99) (MISSING=-99).
 VALUE LABELS
-    BSBG12A BSBG12B BSBG12C BSBG12D BSBG12E BSBG12F 
+    BSBG12A BSBG12B BSBG12C BSBG12D BSBG12E BSBG12F
         0 'Yes'
         1 'No'.
 MISSING VALUES
@@ -402,7 +402,7 @@ RENAME VARIABLES (
     BSBM19F BSBM19G BSBM19H BSBM19I
     =
     MSCWell MSCHMate MSCNoStr MSCLearn MSCNervs
-    MSCWork MSCGood MSCHSubj MSCConfs 
+    MSCWork MSCGood MSCHSubj MSCConfs
     ).
 
 * G20: Extrinsic motivation for learning math.
@@ -540,7 +540,7 @@ RENAME VARIABLES (
     BSBS25F BSBS25G BSBS25H BSBS25I
     =
     SHelp SLrnOth SUniv SForJob SMtJob
-    SAhead SJObOp SParent SImpWel 
+    SAhead SJObOp SParent SImpWel
     ).
 
 * G26A: Integrated science: Homework occurences.
@@ -561,7 +561,7 @@ MISSING VALUES
 RENAME VARIABLES (
     BSBM26AA BSBS26AB
     =
-    MatHwOf SciHwOf 
+    MatHwOf SciHwOf
     ).
 
 * G26B: Integrated science: Time on homework.
@@ -605,7 +605,7 @@ RENAME VARIABLES (
     MatExtr SciExtr
     ).
 
-* G27B: Integrated science: Extra lesson occurences.
+* G27B: Integrated science: Extra lesson occurrences.
 RECODE
     BSBM27BA BSBS27BB
         (1=0) (2=1) (3=2) (4=3)
@@ -727,7 +727,7 @@ RENAME VARIABLES (
     BSBB25E BSBB25F BSBB25G BSBB25H
     =
     BSCWell BSCHard BSCNoGod BSCLearn
-    BSCGDif BSCGTea BSCHardMe BSCConfs 
+    BSCGDif BSCGTea BSCHardMe BSCConfs
     ).
 
 * GE26: Attending earth science class.

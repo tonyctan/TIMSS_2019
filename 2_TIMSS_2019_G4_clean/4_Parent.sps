@@ -101,7 +101,7 @@ RENAME VARIABLES (
 
 * 4A: Attending early childhood education.
 RECODE
-    ASBH03A ASBH03B ASBH03C ASBH03D ASBH03E ASBH03F 
+    ASBH03A ASBH03B ASBH03C ASBH03D ASBH03E ASBH03F
         (1=1) (2=0)
         (9=-99) (SYSMIS=-99) (MISSING=-99).
 VALUE LABELS
@@ -119,7 +119,7 @@ RENAME VARIABLES (
 
 * 4B: Number of years attending early childhood and preprimary education.
 RECODE
-    ASBH04B 
+    ASBH04B
         (1=0) (2=1) (3=2) (4=3) (5=4) (6=5)
         (9=-99) (SYSMIS=-99) (MISSING=-99).
 VALUE LABELS
@@ -140,7 +140,7 @@ RENAME VARIABLES (
 
 * 5: Age of child began primary school.
 RECODE
-    ASBH05 
+    ASBH05
         (1=0) (2=1) (3=2) (4=3)
         (9=-99) (SYSMIS=-99) (MISSING=-99).
 VALUE LABELS
@@ -275,7 +275,7 @@ RENAME VARIABLES (
     ASBH09E ASBH09F ASBH09G ASBH09H
     =
     ScInclud ScSafeEn ScProgram ScInform
-    ScHighSt ScReadBt ScMathBt ScSciBt 
+    ScHighSt ScReadBt ScMathBt ScSciBt
     ).
 
 * 10: Number of books at home according to parent.
@@ -294,7 +294,7 @@ MISSING VALUES
     ASBH10
         (-99).
 RENAME VARIABLES (
-    ASBH10 = BookHome 
+    ASBH10 = BookHome
     ).
 
 * 11: Number of books for children at home.
@@ -313,7 +313,7 @@ MISSING VALUES
     ASBH11
         (-99).
 RENAME VARIABLES (
-    ASBH11 = BookChild 
+    ASBH11 = BookChild
     ).
 
 * 12: Parents' country of birth.
@@ -330,33 +330,33 @@ MISSING VALUES
     ASBH12A ASBH12B
         (-99).
 RENAME VARIABLES (
-    ASBH12A ASBH12B 
-    = 
+    ASBH12A ASBH12B
+    =
     PFaBorn PMoBorn
     ).
 
 * 13: Languages that parents use to communicate with the child.
 RECODE
     ASBH13AA ASBH13AB ASBH13BA ASBH13BB ASBH13CA ASBH13CB ASBH13DA
-    ASBH13DB ASBH13EA ASBH13EB ASBH13FA ASBH13FB ASBH13GA ASBH13GB 
+    ASBH13DB ASBH13EA ASBH13EB ASBH13FA ASBH13FB ASBH13GA ASBH13GB
         (1=0) (2=1) (6=2)
         (6=-99) (9=-99) (SYSMIS=-99) (MISSING=-99).
 VALUE LABELS
     ASBH13AA ASBH13AB ASBH13BA ASBH13BB ASBH13CA ASBH13CB ASBH13DA
-    ASBH13DB ASBH13EA ASBH13EB ASBH13FA ASBH13FB ASBH13GA ASBH13GB 
+    ASBH13DB ASBH13EA ASBH13EB ASBH13FA ASBH13FB ASBH13GA ASBH13GB
          0 ''
         1 ''
         2 ''.
 MISSING VALUES
     ASBH13AA ASBH13AB ASBH13BA ASBH13BB ASBH13CA ASBH13CB ASBH13DA
-    ASBH13DB ASBH13EA ASBH13EB ASBH13FA ASBH13FB ASBH13GA ASBH13GB 
+    ASBH13DB ASBH13EA ASBH13EB ASBH13FA ASBH13FB ASBH13GA ASBH13GB
         (-99).
 RENAME VARIABLES (
     ASBH13AA ASBH13AB ASBH13BA ASBH13BB ASBH13CA ASBH13CB ASBH13DA
-    ASBH13DB ASBH13EA ASBH13EB ASBH13FA ASBH13FB ASBH13GA ASBH13GB  
-    = 
+    ASBH13DB ASBH13EA ASBH13EB ASBH13FA ASBH13FB ASBH13GA ASBH13GB
+    =
     PFaLang PMoLang PFaLang1 PMoLang1 PFaLang2 PMoLang2 PFaLang3
-    PMoLang3 PFaLang4 PMoLang4 PFaLang5 PMoLang5 FaNoApp MoNoAp 
+    PMoLang3 PFaLang4 PMoLang4 PFaLang5 PMoLang5 FaNoApp MoNoAp
     ).
 
 * 14: The use of language of the test at home.
@@ -365,18 +365,16 @@ RECODE
         (1=3) (2=2) (3=1) (4=0)
         (9=-99) (SYSMIS=-99) (MISSING=-99).
 VALUE LABELS
-    ASBH14 
+    ASBH14
         0 'Never'
         1 'Sometimes'
         2 'Almost always'
         3 'Always'.
 MISSING VALUES
-    ASBH14 
+    ASBH14
         (-99).
 RENAME VARIABLES (
-    ASBH14 
-    = 
-    LangHome 
+    ASBH14 = LangHome
     ).
 
 * 15: Parental education.
@@ -385,23 +383,23 @@ RECODE
         (1=0) (2=1) (3=2) (4=3) (5=4) (6=5) (7=6) (8=7) (9=8)
         (99=-99) (SYSMIS=-99) (MISSING=-99).
 VALUE LABELS
-    ASBH15A ASBH15B 
+    ASBH15A ASBH15B
         0 'Did not go to school'
-        1 'Some <Primary education-- ISCED Level1 or Lower secondary education--ISCED Level 2>'
-        2 '<Lower secondary education ISCED Level 2>'
-        3 '<Upper secondary education-- ISCED Level 3>'
-        4 '<Post-secondary, non-tertiary education-- ISCED Level 4>'
-        5 '<Short-cycle tertiary education-- ISCED Level 5>'
+        1 'Some <Primary education--ISCED Level1 or Lower secondary education--ISCED Level 2>'
+        2 '<Lower secondary education--ISCED Level 2>'
+        3 '<Upper secondary education--ISCED Level 3>'
+        4 '<Post-secondary, non-tertiary education--ISCED Level 4>'
+        5 '<Short-cycle tertiary education--ISCED Level 5>'
         6 '<Bachelors or equivalent level--ISCED Level 6>'
         7 '<Postgraduate degree: Masters--ISCED Level 7 or Doctor--ISCED Level 8>'
         8 'Not applicable'.
 MISSING VALUES
-    ASBH15A ASBH15B 
+    ASBH15A ASBH15B
         (-99).
 RENAME VARIABLES (
-    ASBH15A ASBH15B 
-    = 
-    FaEdu MoEdu 
+    ASBH15A ASBH15B
+    =
+    FaEdu MoEdu
     ).
 
 * 16: Parent's expectation of the child education.
@@ -410,18 +408,18 @@ RECODE
         (1=0) (2=1) (3=2) (4=3) (5=4) (6=5)
         (9=-99) (SYSMIS=-99) (MISSING=-99).
 VALUE LABELS
-    ASBH16 
+    ASBH16
         0 'Finish <Lower secondary education--ISCED Level 2>'
-        1 'Finish <Upper secondary education-- ISCED Level 3>'
-        2 'Finish <Post-secondary, non-tertiary education-- ISCED Level 4>'
-        3 'Finish <Short-cycle tertiary education-- ISCED Level 5>'
+        1 'Finish <Upper secondary education--ISCED Level 3>'
+        2 'Finish <Post-secondary, non-tertiary education--ISCED Level 4>'
+        3 'Finish <Short-cycle tertiary education--ISCED Level 5>'
         4 'Finish <Bachelors or equivalent level--ISCED Level 6>'
         5 'Finish <Postgraduate degree: Masters--ISCED Level 7 or Doctor--ISCED Level 8>'.
 MISSING VALUES
-    ASBH16 
+    ASBH16
         (-99).
 RENAME VARIABLES (
-    ASBH16 = ChEduExp 
+    ASBH16 = ChEduExp
     ).
 
 * 17: Parental occupation.
@@ -431,7 +429,7 @@ RECODE
         (8=7) (9=8) (10=9) (11=10) (12=11)
         (99=-99) (SYSMIS=-99) (MISSING=-99).
 VALUE LABELS
-    ASBH17A ASBH17B 
+    ASBH17A ASBH17B
         0 'Has never worked for pay'
         1 'Small Business Owner'
         2 'Clerical Worker'
@@ -445,11 +443,11 @@ VALUE LABELS
         10 'Technician or Associate Professional'
         11 'Not applicable'.
 MISSING VALUES
-    ASBH17A ASBH17B 
+    ASBH17A ASBH17B
         (-99).
 RENAME VARIABLES (
-    ASBH17A ASBH17B 
-    = 
+    ASBH17A ASBH17B
+    =
     FaJob MoJob
     ).
 
@@ -463,7 +461,7 @@ RECODE
         (9999999999=-99) (SYSMIS=-99) (MISSING=-99).
 
 MISSING VALUES
-    ITLANG_SH 
+    ITLANG_SH
         (-99).
 
 * Locale ID of student home questionnaire.
@@ -472,7 +470,7 @@ RECODE
         (99=-99) (SYSMIS=-99) (MISSING=-99).
 
 MISSING VALUES
-    LCID_SH 
+    LCID_SH
         (-99).
 
 * TIMSS construct: Early literacy activities before school.
