@@ -496,19 +496,19 @@ MISSING VALUES
         (-99).
 
 * Student gender.
-*RECODE
+RECODE
     ITSEX
         (1=0) (2=1)
         (9=-99) (SYSMIS=-99) (MISSING=-99).
-*VALUE LABELS
-*    ITSEX
+VALUE LABELS
+    ITSEX
         0 'Female'
         1 'Male'.
-*MISSING VALUES
-*    ITSEX
+MISSING VALUES
+    ITSEX
         (-99).
-*RENAME VARIABLES (
-    ITSEX = GendBoy
+RENAME VARIABLES (
+    ITSEX = SexBoy
     ).
 
 * Student age.
@@ -522,7 +522,7 @@ RENAME VARIABLES (
     ASDAGE = StdAge
     ).
 
-* Test administrator postion.
+* Test administrator position.
 RECODE
     ITADMINI
         (1=0) (2=1) (3=2)
@@ -543,7 +543,10 @@ RENAME VARIABLES (
 FREQUENCIES
     WGTADJ1 WGTADJ2 WGTADJ3 WGTFAC1 WGTFAC2 WGTFAC3
         /FORMAT = NOTABLE.
-* Good! Nothing is missing. No re-coding needed either. No further action.
+* Good! Nothing is missing. Simply change missing label to -99.
+MISSING VALUES
+    WGTADJ1 WGTADJ2 WGTADJ3 WGTFAC1 WGTFAC2 WGTFAC3
+        (-99).
 
 
 * TIMSS construct: Disorderly behavior during math lesson.

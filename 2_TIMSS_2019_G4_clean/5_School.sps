@@ -537,6 +537,9 @@ VALUE LABELS
         0 'More disadvantaged'
         1 'Neither more affluent nor more disadvantaged'
         2 'More affluent'.
+MISSING VALUES
+    ACDGSBC
+        (-99).
 RENAME VARIABLES (
     ACDGSBC = SchSES
     ).
@@ -545,6 +548,9 @@ RENAME VARIABLES (
 RECODE
     ACDGTIHY
         (9999=-99) (SYSMIS=-99) (MISSING=-99).
+MISSING VALUES
+    ACDGTIHY
+        (-99).
 RENAME VARIABLES (
     ACDGTIHY = InstHour
     ).
